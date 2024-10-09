@@ -11,6 +11,12 @@ public class Player : MonoBehaviour
     Laser laser;
     float speed = 5f;
 
+    /* What each weapon needs (skapa prefabs som ärver)
+     * Damage
+     * Rate of fire
+     * Max ammo
+    */
+
     // Update is called once per frame
     void Update()
     {
