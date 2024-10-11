@@ -7,9 +7,18 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
+    // Variabler
     public Laser laserPrefab;
     Laser laser;
     float speed = 5f;
+    
+
+    //Ammo Variabler
+    int ammo = 10;
+    float fireRate = 0.2f;
+    bool canShoot = true;
+    
+
 
     // Update is called once per frame
     void Update()
@@ -33,11 +42,26 @@ public class Player : MonoBehaviour
         transform.position = position;
         
 
-        if (Input.GetKeyDown(KeyCode.Space) && laser == null)
+        if (Input.GetKey(KeyCode.Space))
         {
-            laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+            if(canShoot = true)
+            {
+                Shoot();
+                StartCoroutine(Cooldown());
+            }
         }
     }
+    private void Shoot()
+    {
+        laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+    }
+    IEnumerator Cooldown()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(fireRate);
+        canShoot = true;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
