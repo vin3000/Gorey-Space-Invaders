@@ -21,5 +21,6 @@ public class Missile : Projectile
     {
         Destroy(gameObject); //så fort den krockar med något så ska den försvinna.
     }
+
    
 }
