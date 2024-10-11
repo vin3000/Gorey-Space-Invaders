@@ -20,6 +20,12 @@ public class Player : MonoBehaviour
     
 
 
+    /* What each weapon needs (skapa prefabs som ärver)
+     * Damage
+     * Rate of fire
+     * Max ammo
+    */
+
     // Update is called once per frame
     void Update()
     {
