@@ -13,10 +13,10 @@ public class Player : MonoBehaviour
     float speed = 5f;
 
     //Vapen Variabler
-    Weapon currentWeapon = new RocketLauncher(10, 2f, 50);
+    Weapon currentWeapon;
     bool canShoot = true;
     bool waiting = false;
-    
+
 
 
     /* What each weapon needs (skapa prefabs som ärver)
@@ -24,6 +24,11 @@ public class Player : MonoBehaviour
      * Rate of fire
      * Max ammo
     */
+
+    private void Start()
+    {
+        currentWeapon = new Glock();
+    }
 
     // Update is called once per frame
     void Update()
@@ -49,10 +54,10 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            Shoot(currentWeapon.ammo,currentWeapon.fire);
+            Shoot(currentWeapon.ammo, currentWeapon.fireRate, currentWeapon.damage);
         }
     }
-    private void Shoot(int ammo, float fireRate)
+    private void Shoot(int ammo, float fireRate, float damage)
     {
         if (canShoot = true && !waiting)//Kollar om coroutinen Cooldown kör med hjälp av waiting variabeln, så att vi inte startar flera cooldowns.
         {
