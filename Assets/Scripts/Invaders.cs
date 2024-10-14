@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Invaders : MonoBehaviour
 {
-    /*Fixa animations
+    /*
+     * Fixa animations
      * varför dör invaders vid toppen?
      * ändra så att spelaren skadas ifall en zombie springer förbi (kanske mot spelaren?)
      * byt ut mot annan projectile??
