@@ -5,7 +5,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class Laser : Projectile
+public class Bullet : Projectile
 {
     private void Awake()
     {
