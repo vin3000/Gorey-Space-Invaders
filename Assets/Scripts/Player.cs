@@ -11,13 +11,12 @@ public class Player : MonoBehaviour
     public Laser laserPrefab;
     Laser laser;
     float speed = 5f;
-    
 
-    //Ammo Variabler
-    int ammo = 10;
-    float fireRate = 0.2f;
+    //Vapen Variabler
+    Weapon currentWeapon;
     bool canShoot = true;
-    
+    bool waiting = false;
+
 
 
     /* What each weapon needs (skapa prefabs som ärver)
@@ -25,6 +24,11 @@ public class Player : MonoBehaviour
      * Rate of fire
      * Max ammo
     */
+
+    private void Start()
+    {
+        currentWeapon = new Glock();
+    }
 
     // Update is called once per frame
     void Update()
@@ -50,22 +54,25 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            if(canShoot = true)
-            {
-                Shoot();
-                StartCoroutine(Cooldown());
-            }
+            Shoot(currentWeapon.ammo, currentWeapon.fireRate, currentWeapon.damage);
         }
     }
-    private void Shoot()
+    private void Shoot(int ammo, float fireRate, float damage)
     {
-        laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+        if (canShoot = true && !waiting)//Kollar om coroutinen Cooldown kör med hjälp av waiting variabeln, så att vi inte startar flera cooldowns.
+        {
+            StartCoroutine(Cooldown(fireRate));
+            laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+        }
     }
-    IEnumerator Cooldown()
+    IEnumerator Cooldown(float fireRate)
     {
+        waiting = true;
         canShoot = false;
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
+        waiting = false;
+        
     }
 
     /*

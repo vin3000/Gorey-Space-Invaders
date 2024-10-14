@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Zombies : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Zombies : MonoBehaviour
 
     protected bool isShooter = false;
     protected bool isExplosive = false;
+
+
 }
 
 //skapa subklasser av zombier. Varje klass ska innehålla zombiens actions. Som Invader skripten.
@@ -19,3 +22,6 @@ public class Zombies : MonoBehaviour
  * Explosiv
  * Boss
  */
+
+//Ändra till annan prefab
+
