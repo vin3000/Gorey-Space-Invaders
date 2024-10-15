@@ -8,19 +8,23 @@ public class Invaders : MonoBehaviour
 {
     /*
      * Fixa animations
-     * varför dör invaders vid toppen?
      * ändra så att spelaren skadas ifall en zombie springer förbi (kanske mot spelaren?)
      * byt ut mot annan projectile??
      * gör så att koden ändrar waves (helst dynamic waves, inte hardcoded)
+     * 
+     * Gör row, col och speed private
+     * flytta movement till individuella invaders?
      */
 
     public Invader[] prefab = new Invader[5];
 
-    private int row = 5;
-    private int col = 11;
+    public int row = 5;
+    public int col = 11;
 
     private Vector3 initialPosition;
     private Vector3 direction = Vector3.down;
+    public float speed = 1f;
+
 
     //byt ut mot annan projectile??
     public Missile missilePrefab;
@@ -119,7 +123,6 @@ public class Invaders : MonoBehaviour
     {
         //ändra så att spelaren skadas ifall en zombie springer förbi (kanske mot spelaren?)
 
-        float speed = 1f;
         transform.position += speed * Time.deltaTime * direction;
 
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
