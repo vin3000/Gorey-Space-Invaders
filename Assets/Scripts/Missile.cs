@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Missile : Projectile
 {
+    public float damage;
     private void Awake()
     {
         direction = Vector3.down;

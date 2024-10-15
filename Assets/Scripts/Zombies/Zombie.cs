@@ -9,12 +9,16 @@ public class Zombies : MonoBehaviour
     /*
      * Gör så att game manager letar efter denna istället för invaders
      */
+
+    public GameObject Glock;
+
     public float speed = 10f;
+    private Vector3 direction = Vector3.down;
     public float damage = 10f;
     public float health = 10f;
 
-    protected bool isShooter = false;
-    protected bool isExplosive = false;
+    public bool isShooter = false;
+    public bool isExplosive = false;
 
     public Missile missilePrefab;
     public void Start()
@@ -29,16 +33,32 @@ public class Zombies : MonoBehaviour
         float rand = UnityEngine.Random.value;
         if (rand < 0.2)
         {
-            Instantiate(missilePrefab, transform.position, Quaternion.identity);
+            Missile shotMissile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
+            shotMissile.GetComponent<Missile>().damage = damage;
         }
     }
 
-    private void update()
+    private void Update()
     {
-        if (isExplosive && (health <= 0 || health == 0))
+        Move();
+        if (health <= 0 || health == 0)
         {
-            //kalla explosions-metod
+            Die();
         }
+    }
+
+    void Move()
+    {
+        transform.position += speed * Time.deltaTime * direction;
+    }
+    void Die()
+    {
+        //kalla partiklar
+        if (isExplosive)
+        {
+            //kalla explosion
+        }
+        Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -47,7 +67,7 @@ public class Zombies : MonoBehaviour
             //GameManager.Instance.OnInvaderKilled(this); 
             //minska health med damage av laser
 
-            //health -= collision.gameObject.GetComponent<Laser eller bullet>().(damage variabeln)
+            health -= collision.gameObject.GetComponent<Bullet>().damage;
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Boundary")) //nått nedre kanten
         {
