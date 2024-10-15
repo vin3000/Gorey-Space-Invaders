@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Variabler
-    public Laser laserPrefab;
-    Laser laser;
-    float speed = 5f;
+    public Bullet laserPrefab;
+    Bullet laser;
+    float speed = 10f;
 
     //Vapen Variabler
     Weapon currentWeapon;
@@ -54,17 +55,31 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            Shoot(currentWeapon.ammo, currentWeapon.fireRate, currentWeapon.damage);
+            Shoot(currentWeapon.ammo, currentWeapon.fireRate, currentWeapon.damage, currentWeapon.projectileSpeed);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentWeapon = new Sniper();
         }
     }
-    private void Shoot(int ammo, float fireRate, float damage)
+    private void Shoot(int ammo, float fireRate, float damage, float projectileSpeed)
     {
         if (canShoot = true && !waiting)//Kollar om coroutinen Cooldown kör med hjälp av waiting variabeln, så att vi inte startar flera cooldowns.
         {
+            if(currentWeapon.ammo <= 0)
+            {
+                Console.WriteLine("no  more bullets :(");
+                currentWeapon = new Glock();
+                return;
+            }
             StartCoroutine(Cooldown(fireRate));
             laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+            laser.speed = projectileSpeed;
+            currentWeapon.ammo -= 1;
+            
         }
     }
+
     IEnumerator Cooldown(float fireRate)
     {
         waiting = true;
