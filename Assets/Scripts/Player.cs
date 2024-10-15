@@ -9,12 +9,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Variabler
-    public Bullet laserPrefab;
-    Bullet laser;
+    public Bullet bulletPrefab;
+    public Bullet bullet;
     float speed = 10f;
 
     //Vapen Variabler
-    Weapon currentWeapon;
+    Weapon currentWeapon = new Glock();
     bool canShoot = true;
     bool waiting = false;
 
@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        currentWeapon = new Glock();
     }
 
     // Update is called once per frame
@@ -73,11 +72,16 @@ public class Player : MonoBehaviour
                 return;
             }
             StartCoroutine(Cooldown(fireRate));
-            laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
-            laser.speed = projectileSpeed;
+            bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            bullet.damage = currentWeapon.damage;
+            bullet.speed = projectileSpeed;
             currentWeapon.ammo -= 1;
             
         }
+    }
+
+    private void SwapWeapon(Weapon newWeapon)
+    {
     }
 
     IEnumerator Cooldown(float fireRate)

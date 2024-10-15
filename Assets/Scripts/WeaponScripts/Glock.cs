@@ -1,3 +1,6 @@
+using UnityEngine;
+
+
 public class Glock : Weapon
 {
     public Glock()
@@ -7,6 +10,7 @@ public class Glock : Weapon
         fireRate = 0.2f;
         damage = 5;
         projectileSpeed = 10f;
+        
         
     }
 }
