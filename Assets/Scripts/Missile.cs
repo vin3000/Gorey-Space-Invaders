@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+
 
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 public class Missile : Projectile
 {
+
+    public int currentHealth;
+    public int Damage; 
+
     private void Awake()
     {
         direction = Vector3.down;
@@ -19,8 +26,15 @@ public class Missile : Projectile
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject); //så fort den krockar med något så ska den försvinna.
+        Destroy(gameObject); //så fort den krockar med något så ska den försvinna. 
+
+        
+
     }
 
-   
-}
+    }
+
+
+
+
+

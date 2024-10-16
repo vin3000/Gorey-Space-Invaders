@@ -6,14 +6,20 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
 
-    public int currentHealth;
-    public int maxHealth = 10;
-    public int damage = 2;
+    private int currentHealth;
+    private int maxHealth = 100;
+    private int damage = 10;
+    public int heal = 2; 
+
+
+    public HealthBar healthBar; 
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
+
+        healthBar.SetMaxHealth(maxHealth); 
     }
 
 
@@ -23,14 +29,35 @@ public class Health : MonoBehaviour
         Death(); 
 
         TakeDamage();
+
+        Heal(); 
+
+
     }
     
     void TakeDamage()
     {
+
+      
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             currentHealth -= damage; 
+        } //Gör att spelaren tar damage när man trycker på A 
+
+
+        healthBar.SetHealth(currentHealth); 
+        //Uppdaterar healthbar UI 
+    } 
+
+    void Heal() {
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            currentHealth += heal;
         }
+
+
     }
 
     void Death()
@@ -43,12 +70,6 @@ public class Health : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //make missile ta damage på playern 
-        //make missile ta damage på playern 
-    }
-
-
+   
 
 }

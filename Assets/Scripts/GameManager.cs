@@ -121,6 +121,8 @@ public class GameManager : MonoBehaviour
     public void OnMysteryShipKilled(MysteryShip mysteryShip)
     {
         mysteryShip.gameObject.SetActive(false);
+
+
     }
 
     public void OnBoundaryReached()
