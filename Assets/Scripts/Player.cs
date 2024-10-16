@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public Bullet bulletPrefab;
     public Bullet bullet;
     float speed = 10f;
+    public AudioSource source;
 
     //Vapen Variabler
     public GameObject[] weaponSprites;
@@ -30,13 +31,11 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-    }
-    private void Awake()
-    {
+        source = GetComponent<AudioSource>();
         currentWeapon = new Glock();
-        currentSprite = Instantiate(weaponSprites[0], new Vector3(0.655f, 0.248f, 0), Quaternion.identity, transform);
+        currentSprite = Instantiate(weaponSprites[0], currentWeapon.spritePos, Quaternion.identity);
+        currentSprite.transform.SetParent(transform, true);
     }
-
 
     // Update is called once per frame
     void Update()
@@ -66,7 +65,7 @@ public class Player : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            currentWeapon = new Sniper();
+            SwapWeapon(new Sniper(), weaponSprites[1]);
         }
     }
     private void Shoot(int ammo, float fireRate, float damage, float projectileSpeed)
@@ -79,8 +78,9 @@ public class Player : MonoBehaviour
                 currentWeapon = new Glock();
                 return;
             }
+            source.Play();
             StartCoroutine(Cooldown(fireRate));
-            bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            bullet = Instantiate(bulletPrefab, currentSprite.transform.Find("BulletTransform").transform.position, Quaternion.identity);
             bullet.damage = currentWeapon.damage;
             bullet.speed = projectileSpeed;
             currentWeapon.ammo -= 1;
@@ -93,8 +93,8 @@ public class Player : MonoBehaviour
         Destroy(currentSprite);
         currentWeapon = newWeapon;
         currentSprite = sprite;
-        currentSprite = Instantiate(weaponSprites[0], new Vector3(0.655f, 0.248f, 0), Quaternion.identity, transform);
-
+        currentSprite = Instantiate(sprite, newWeapon.spritePos, new Quaternion(0, 0, -90, 0));
+        currentSprite.transform.SetParent(transform, true);
     }
 
     IEnumerator Cooldown(float fireRate)

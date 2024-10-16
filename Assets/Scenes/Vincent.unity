@@ -1459,8 +1459,14 @@ PrefabInstance:
       propertyPath: weaponSprites.Array.data[0]
       value: 
       objectReference: {fileID: 3620228322870266484, guid: 80e72ef6c91564f4bbabe800e31c7600, type: 3}
+    - target: {fileID: 8184595157597878950, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+      propertyPath: weaponSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 7342107886190432137, guid: 8c703f68c01cf89499776631125f474b, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5491813078511679008, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+    - {fileID: 5397858675011541952, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
