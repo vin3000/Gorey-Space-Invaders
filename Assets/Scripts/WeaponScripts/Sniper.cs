@@ -11,6 +11,6 @@ public class Sniper : Weapon
         fireRate = 3f;
         damage = 50;
         projectileSpeed = 30f;
-        spritePos = new Vector2(0.57f, 0.25f);
+        spritePos = new Vector2(0.57f, -12.25f);
     }
 }
