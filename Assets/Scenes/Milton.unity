@@ -1319,6 +1319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
   bullet: {fileID: 0}
+  weaponSprites: []
 --- !u!61 &1934562384
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1710,6 +1711,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1570523996390066814, guid: ef84ca2451ce54444b1c1e14c88d59f6, type: 3}
+      propertyPath: lengthInSec
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4227962623338298599, guid: ef84ca2451ce54444b1c1e14c88d59f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6678368
