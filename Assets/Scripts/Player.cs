@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Bullet bullet;
     float speed = 10f;
     public AudioSource source;
+    public AudioClip clip;
 
     //Vapen Variabler
     public GameObject[] weaponSprites;
