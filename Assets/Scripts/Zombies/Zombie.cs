@@ -10,8 +10,6 @@ public class Zombies : MonoBehaviour
      * Gör så att game manager letar efter denna istället för invaders
      */
 
-    public GameObject Glock;
-
     public float speed = 10f;
     private Vector3 direction = Vector3.down;
     public float damage = 10f;

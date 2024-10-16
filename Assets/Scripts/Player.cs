@@ -14,7 +14,9 @@ public class Player : MonoBehaviour
     float speed = 10f;
 
     //Vapen Variabler
-    Weapon currentWeapon = new Glock();
+    public GameObject[] weaponSprites;
+    Weapon currentWeapon;
+    GameObject currentSprite;
     bool canShoot = true;
     bool waiting = false;
 
@@ -29,6 +31,12 @@ public class Player : MonoBehaviour
     private void Start()
     {
     }
+    private void Awake()
+    {
+        currentWeapon = new Glock();
+        currentSprite = Instantiate(weaponSprites[0], new Vector3(0.655f, 0.248f, 0), Quaternion.identity, transform);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -80,8 +88,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SwapWeapon(Weapon newWeapon)
+    private void SwapWeapon(Weapon newWeapon, GameObject sprite)
     {
+        Destroy(currentSprite);
+        currentWeapon = newWeapon;
+        currentSprite = sprite;
+        currentSprite = Instantiate(weaponSprites[0], new Vector3(0.655f, 0.248f, 0), Quaternion.identity, transform);
+
     }
 
     IEnumerator Cooldown(float fireRate)

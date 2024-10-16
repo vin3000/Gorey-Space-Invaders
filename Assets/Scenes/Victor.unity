@@ -1582,11 +1582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5100487443101459088, guid: 4f9818babb9d1e7499e5c48c1d4ecfd2, type: 3}
       propertyPath: damage
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5100487443101459088, guid: 4f9818babb9d1e7499e5c48c1d4ecfd2, type: 3}
       propertyPath: health
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5887437942831570094, guid: 4f9818babb9d1e7499e5c48c1d4ecfd2, type: 3}
       propertyPath: m_LocalPosition.x

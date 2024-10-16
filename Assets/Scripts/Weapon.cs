@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 
-public class Weapon : MonoBehaviour
+public class Weapon
 {
     //Variabler
     public int baseAmmo { get; protected set; }
