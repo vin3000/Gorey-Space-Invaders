@@ -173,6 +173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: -1786484066289242039, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}
   bullet: {fileID: 0}
+  source: {fileID: 0}
+  clip: {fileID: 0}
   weaponSprites:
   - {fileID: 3620228322870266484, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}
   - {fileID: 0}

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 
-public class Weapon
+public class Weapon : MonoBehaviour
 {
     //Variabler
     public int baseAmmo { get; protected set; }
@@ -13,6 +13,8 @@ public class Weapon
     public float damage { get; protected set; }
 
     public float projectileSpeed { get; protected set; }
+
+    public Vector3 spritePos { get; protected set; }
+
     //fixa sprites för alla vapen 
-    public GameObject weaponSprite;
 }
