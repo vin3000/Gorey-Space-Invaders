@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Variabler
-    public Laser laserPrefab;
-    Laser laser;
-    float speed = 5f;
+    public Bullet bulletPrefab;
+    public Bullet bullet;
+    float speed = 10f;
+    public AudioSource source;
+    public AudioClip clip;
 
     //Vapen Variabler
+    public GameObject[] weaponSprites;
     Weapon currentWeapon;
+    GameObject currentSprite;
     bool canShoot = true;
     bool waiting = false;
 
@@ -27,7 +32,10 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         currentWeapon = new Glock();
+        currentSprite = Instantiate(weaponSprites[0], currentWeapon.spritePos, Quaternion.identity);
+        currentSprite.transform.SetParent(transform, true);
     }
 
     // Update is called once per frame
@@ -54,17 +62,42 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            Shoot(currentWeapon.ammo, currentWeapon.fireRate, currentWeapon.damage);
+            Shoot(currentWeapon.ammo, currentWeapon.fireRate, currentWeapon.damage, currentWeapon.projectileSpeed);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SwapWeapon(new Sniper(), weaponSprites[1]);
         }
     }
-    private void Shoot(int ammo, float fireRate, float damage)
+    private void Shoot(int ammo, float fireRate, float damage, float projectileSpeed)
     {
         if (canShoot = true && !waiting)//Kollar om coroutinen Cooldown kör med hjälp av waiting variabeln, så att vi inte startar flera cooldowns.
         {
+            if(currentWeapon.ammo <= 0)
+            {
+                Console.WriteLine("no  more bullets :(");
+                currentWeapon = new Glock();
+                return;
+            }
+            source.Play();
             StartCoroutine(Cooldown(fireRate));
-            laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+            bullet = Instantiate(bulletPrefab, currentSprite.transform.Find("BulletTransform").transform.position, Quaternion.identity);
+            bullet.damage = currentWeapon.damage;
+            bullet.speed = projectileSpeed;
+            currentWeapon.ammo -= 1;
+            
         }
     }
+
+    private void SwapWeapon(Weapon newWeapon, GameObject sprite)
+    {
+        Destroy(currentSprite);
+        currentWeapon = newWeapon;
+        currentSprite = sprite;
+        currentSprite = Instantiate(sprite, newWeapon.spritePos, new Quaternion(0, 0, -90, 0));
+        currentSprite.transform.SetParent(transform, true);
+    }
+
     IEnumerator Cooldown(float fireRate)
     {
         waiting = true;

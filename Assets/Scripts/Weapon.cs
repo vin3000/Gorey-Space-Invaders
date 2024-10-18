@@ -1,14 +1,19 @@
+using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Weapon
+
+public class Weapon : MonoBehaviour
 {
     //Variabler
-    public int ammo { get; protected set; }
+    public int baseAmmo { get; protected set; }
+
+    public int ammo;
+
     public float fireRate { get; protected set; }
     public float damage { get; protected set; }
 
+    public float projectileSpeed { get; protected set; }
 
-    /*Fråga Clara om hur man ska ha varje vapen klass i en script 
-    eller att ha varje klass som en egen script*/
-
+    public Vector3 spritePos { get; protected set; }
+    //fixa sprites för alla vapen 
 }

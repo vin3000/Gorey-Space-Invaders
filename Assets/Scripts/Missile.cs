@@ -10,10 +10,14 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Missile : Projectile
 {
+//<<<<<<< HEAD
 
     public int currentHealth;
     public int Damage; 
 
+//=======
+    public float damage;
+//>>>>>> 1f2bd770fd678bcfb6d8f9347bf2180d81a8d208
     private void Awake()
     {
         direction = Vector3.down;

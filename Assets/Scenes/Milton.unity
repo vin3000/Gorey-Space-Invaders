@@ -502,6 +502,9 @@ MonoBehaviour:
   - {fileID: -4445763110427576504, guid: e3350ef69eec3a54eb606c8698e32c06, type: 3}
   - {fileID: 1341155491049610358, guid: ba4e387d14c159d41958d25bc6bd934f, type: 3}
   - {fileID: -6052109391061080858, guid: 47734fd8759f5324ab07a84a0667953c, type: 3}
+  row: 5
+  col: 11
+  speed: 1
   missilePrefab: {fileID: 6237745307908444816, guid: 5469e6c785da15841b47da9bf6a5a0a8, type: 3}
 --- !u!4 &421163676
 Transform:
@@ -1261,7 +1264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af1397425a4c6446ad6cc9c449d3374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: -1786484066289242039, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}
+  bulletPrefab: {fileID: 0}
+  bullet: {fileID: 0}
+  source: {fileID: 0}
+  weaponSprites: []
 --- !u!61 &1934562384
 BoxCollider2D:
   m_ObjectHideFlags: 0
