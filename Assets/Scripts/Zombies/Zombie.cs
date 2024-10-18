@@ -78,7 +78,7 @@ public class Zombies : MonoBehaviour
         }
         if (isInfested)
         {
-            //kalla summon skript
+            SummoningZombies(); //gör så summon skript kollar hur många som ska summonas
         }
         Destroy(gameObject);
     }
