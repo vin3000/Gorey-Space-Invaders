@@ -11,15 +11,12 @@ public class Player : MonoBehaviour
 {
     // Variabler
     public Bullet bulletPrefab;
-    public Bullet bullet;
+    private Bullet bullet;
     float speed = 10f;
-    public AudioSource source;
-    public AudioClip clip;
 
     //Vapen Variabler
-    public GameObject[] weaponSprites;
+    public Weapon glockPrefab, sniperPrefab;
     Weapon currentWeapon;
-    GameObject currentSprite;
     bool canShoot = true;
     bool waiting = false;
 
@@ -33,10 +30,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        source = GetComponent<AudioSource>();
-        currentWeapon = new Glock();
-        currentSprite = Instantiate(weaponSprites[0], currentWeapon.spritePos, Quaternion.identity);
-        currentSprite.transform.SetParent(transform, true);
+        currentWeapon = Instantiate(glockPrefab, glockPrefab.spritePos, Quaternion.identity, transform);
     }
 
     // Update is called once per frame
@@ -67,7 +61,7 @@ public class Player : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SwapWeapon(new Sniper(), weaponSprites[1]);
+            SwapWeapon(sniperPrefab);
         }
     }
     private void Shoot(int ammo, float fireRate, float damage, float projectileSpeed)
@@ -77,26 +71,26 @@ public class Player : MonoBehaviour
             if(currentWeapon.ammo <= 0)
             {
                 Console.WriteLine("no  more bullets :(");
-                currentWeapon = new Glock();
+                currentWeapon = Instantiate(glockPrefab, glockPrefab.spritePos, Quaternion.identity, transform);
                 return;
             }
-            source.Play();
+            AudioSource soundEffect = currentWeapon.GetComponent<AudioSource>();
+            if(soundEffect != null) {
+                soundEffect.Play();
+            }
+            currentWeapon.SpawnBullet(bulletPrefab);
             StartCoroutine(Cooldown(fireRate));
-            bullet = Instantiate(bulletPrefab, currentSprite.transform.Find("BulletTransform").transform.position, Quaternion.identity);
-            bullet.damage = currentWeapon.damage;
-            bullet.speed = projectileSpeed;
             currentWeapon.ammo -= 1;
             
         }
     }
 
-    private void SwapWeapon(Weapon newWeapon, GameObject sprite)
+
+    private void SwapWeapon(Weapon newWeapon)
     {
-        Destroy(currentSprite);
-        currentWeapon = newWeapon;
-        currentSprite = sprite;
-        currentSprite = Instantiate(sprite, newWeapon.spritePos, Quaternion.identity);
-        currentSprite.transform.SetParent(transform, true);
+        currentWeapon.removeObject();
+        print(currentWeapon);
+        currentWeapon = Instantiate(newWeapon, newWeapon.spritePos, newWeapon.transform.rotation, transform);
     }
 
     IEnumerator Cooldown(float fireRate)
