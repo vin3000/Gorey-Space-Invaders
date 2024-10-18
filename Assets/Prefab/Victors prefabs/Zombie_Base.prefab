@@ -171,7 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6deed162f5eff4d9d10fa19aeafc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   damage: 10
   health: 10
+  isShooter: 0
+  isExplosive: 0
+  isSummoner: 0
+  isInfested: 0
   missilePrefab: {fileID: 0}
+  summonPrefab: {fileID: 7260386340399911414, guid: 58da98eedf9715142b7f266e15e5f6f8, type: 3}

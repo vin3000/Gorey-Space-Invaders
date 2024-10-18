@@ -11,7 +11,5 @@ public class Glock : Weapon
         damage = 5;
         projectileSpeed = 10f;
         spritePos = new Vector2(0.655f, -12.248f);
-
-
     }
 }
