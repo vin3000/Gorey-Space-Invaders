@@ -16,5 +16,16 @@ public class Weapon : MonoBehaviour
 
     public Vector3 spritePos { get; protected set; }
 
+    public void SpawnBullet(Bullet bullet)
+    {
+        bullet = Instantiate(bullet, transform.position, Quaternion.identity);
+        bullet.damage = damage;
+        bullet.speed = projectileSpeed;
+    }
+    public void removeObject()
+    {
+        Destroy(gameObject);
+    }
+
     //fixa sprites för alla vapen 
 }
