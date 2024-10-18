@@ -17,22 +17,42 @@ public class Zombies : MonoBehaviour
 
     public bool isShooter = false;
     public bool isExplosive = false;
+    public bool isSummoner = false;
+    public bool isInfested = false;
+    //public bool isProtector = false;
 
     public Missile missilePrefab;
+    public GameObject summonPrefab;
     public void Start()
     {
         if (isShooter)
         {
             InvokeRepeating(nameof(MissileAttack), 1, 1);
         }
+        if (isSummoner)
+        {
+            InvokeRepeating(nameof(SummoningZombies),1,1);
+        }
     }
     void MissileAttack()
     {
         float rand = UnityEngine.Random.value;
-        if (rand < 0.2)
+        if (rand < 0.5)
         {
             Missile shotMissile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
             shotMissile.GetComponent<Missile>().damage = damage;
+        }
+    }
+    void SummoningZombies()
+    {
+        float rand = UnityEngine.Random.value;
+        if (rand < 0.2)
+        {
+            //kolla för ett snyggare sätt att göra detta
+            GameObject summon = Instantiate(summonPrefab, new Vector3(transform.position.x-1,transform.position.y,0), Quaternion.identity);
+            GameObject summon2 = Instantiate(summonPrefab, new Vector3(transform.position.x + 1, transform.position.y, 0), Quaternion.identity);
+            summon.GetComponent<Zombies>().speed = speed + 2f;
+            summon2.GetComponent<Zombies>().speed = speed + 2f;
         }
     }
 
@@ -56,21 +76,22 @@ public class Zombies : MonoBehaviour
         {
             //kalla explosion
         }
+        if (isInfested)
+        {
+            //kalla summon skript
+        }
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Laser")) //layer name change to bullet?
         {
-            //GameManager.Instance.OnInvaderKilled(this); 
-            //minska health med damage av laser
-
             health -= collision.gameObject.GetComponent<Bullet>().damage;
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Boundary")) //nått nedre kanten
         {
             GameObject Player = GameObject.Find("Player");
-            //Player.GetComponent<Health>() //make it so that it kills a bit of health
+            //Player.GetComponent<currentHealth>() //make it so that it kills a bit of health
             GameManager.Instance.OnBoundaryReached(); //här letar game manager efter invaders, när koden här har blivit individ baserad. MAY OR MAY NOT BE USELESS. I think this is the "damage player if edge" thing
         }
     }
