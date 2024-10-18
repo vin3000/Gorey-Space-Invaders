@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        currentWeapon = Instantiate(glockPrefab, glockPrefab.spritePos, Quaternion.identity, transform);
+        currentWeapon = Instantiate(glockPrefab, glockPrefab.transform.position, glockPrefab.transform.rotation, transform);
     }
 
     // Update is called once per frame
@@ -78,7 +78,9 @@ public class Player : MonoBehaviour
             if(soundEffect != null) {
                 soundEffect.Play();
             }
-            currentWeapon.SpawnBullet(bulletPrefab);
+            //bullet = Instantiate(bulletPrefab, bulletPrefab.GameObject.Find("BulletTransform").transform.position, Quaternion.identity);
+            bullet.damage = damage;
+            bullet.speed = projectileSpeed;
             StartCoroutine(Cooldown(fireRate));
             currentWeapon.ammo -= 1;
             
