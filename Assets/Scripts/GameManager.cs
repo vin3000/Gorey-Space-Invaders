@@ -120,9 +120,15 @@ public class GameManager : MonoBehaviour
 
     public void OnMysteryShipKilled(MysteryShip mysteryShip) 
     {
+//<<<<<<< HEAD
+        mysteryShip.gameObject.SetActive(false);
+
+
+//=======
 
         mysteryShip.gameObject.SetActive(false); //for a time. maybe kill and summon new one, even though player doesnt kill it.
         //call powerup summon script
+//>>>>>>> e7379fc14eb58f8dc03fdd380e6f04d17d97380e
     }
 
     public void OnBoundaryReached() //change so that player looses health or something

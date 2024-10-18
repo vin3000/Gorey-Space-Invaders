@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -88,5 +89,9 @@ public class MysteryShip : MonoBehaviour
             SetInvisible();
             GameManager.Instance.OnMysteryShipKilled(this);
         }
+
+        
+
+
     }
 }
