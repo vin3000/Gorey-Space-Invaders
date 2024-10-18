@@ -9,7 +9,18 @@ public class Health : MonoBehaviour
     private int currentHealth;
     private int maxHealth = 100;
     private int damage = 10;
-    public int heal = 2; 
+    public int heal = 2;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Missile")) 
+        {
+            //GameManager.Instance.OnInvaderKilled(this); 
+            //minska health med damage av laser
+
+            currentHealth -= collision.gameObject.GetComponent<Missile>().damage;
+        }
+
 
 
     public HealthBar healthBar; 
