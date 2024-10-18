@@ -18,9 +18,9 @@ public class Weapon : MonoBehaviour
 
     public void SpawnBullet(Bullet bullet)
     {
-        bullet = Instantiate(bullet, transform.position, Quaternion.identity);
-        bullet.damage = damage;
-        bullet.speed = projectileSpeed;
+        Bullet spawnedBullet = Instantiate(bullet, bullet.transform.Find("BulletTransform").transform.position, Quaternion.identity);
+        spawnedBullet.damage = damage;
+        spawnedBullet.speed = projectileSpeed;
     }
     public void removeObject()
     {
