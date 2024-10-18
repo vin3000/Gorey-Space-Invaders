@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -94,7 +95,7 @@ public class Player : MonoBehaviour
         Destroy(currentSprite);
         currentWeapon = newWeapon;
         currentSprite = sprite;
-        currentSprite = Instantiate(sprite, newWeapon.spritePos, new Quaternion(0, 0, -90, 0));
+        currentSprite = Instantiate(sprite, newWeapon.spritePos, Quaternion.identity);
         currentSprite.transform.SetParent(transform, true);
     }
 

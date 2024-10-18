@@ -71,17 +71,22 @@ public class Zombies : MonoBehaviour
         {
             GameObject Player = GameObject.Find("Player");
             //Player.GetComponent<Health>() //make it so that it kills a bit of health
-            GameManager.Instance.OnBoundaryReached(); //här letar game manager efter invaders, när koden här har blivit individ baserad.
+            GameManager.Instance.OnBoundaryReached(); //här letar game manager efter invaders, när koden här har blivit individ baserad. MAY OR MAY NOT BE USELESS. I think this is the "damage player if edge" thing
         }
     }
 }
 
 
 //skapa subklasser av zombier. Varje klass ska innehålla zombiens actions. Som Invader skripten.
-/* Liten snabb
+/* critter
  * Långsam skjutare
  * Explosiv
  * Boss
+ * 
+ * summoner
+ * blocker
+ * infested
+ * fast as shit
  */
 
 //Ändra till annan prefab

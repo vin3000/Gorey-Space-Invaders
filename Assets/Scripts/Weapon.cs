@@ -15,5 +15,6 @@ public class Weapon : MonoBehaviour
     public float projectileSpeed { get; protected set; }
 
     public Vector3 spritePos { get; protected set; }
+
     //fixa sprites för alla vapen 
 }

@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     private Player player;
-    private Invaders invaders;
-    private MysteryShip mysteryShip;
+    private Invaders invaders; //summoner, inte enemy
+    private MysteryShip mysteryShip; //soldaten
     private Bunker[] bunkers;
 
     //Används ej just nu, men ni kan använda de senare
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = FindObjectOfType<Player>();
-        invaders = FindObjectOfType<Invaders>();
+        invaders = FindObjectOfType<Invaders>(); //summoner, inte enemy
         mysteryShip = FindObjectOfType<MysteryShip>();
         bunkers = FindObjectsOfType<Bunker>();
 
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (lives <= 0 && Input.GetKeyDown(KeyCode.Return))
+        if (lives <= 0 && Input.GetKeyDown(KeyCode.Return)) //scrap, health mechanic replaces
         {
             NewGame();
         }
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
-        invaders.ResetInvaders();
+        invaders.ResetInvaders(); 
         invaders.gameObject.SetActive(true);
 
         for (int i = 0; i < bunkers.Length; i++)
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         Respawn();
     }
 
-    private void Respawn()
+    private void Respawn() //reset waves
     {
         Vector3 position = player.transform.position;
         position.x = 0f;
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(true);
     }
 
-    private void GameOver()
+    private void GameOver() //hade varit coolt med en zoom in som i Oscars spel :F
     {
         invaders.gameObject.SetActive(false);
     }
@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void OnInvaderKilled(Invader invader)
+    public void OnInvaderKilled(Invader invader)  //I think this all is useless?? Due to game mechanic changes
     {
         invader.gameObject.SetActive(false);
 
@@ -118,20 +118,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OnMysteryShipKilled(MysteryShip mysteryShip)
+    public void OnMysteryShipKilled(MysteryShip mysteryShip) 
     {
+//<<<<<<< HEAD
         mysteryShip.gameObject.SetActive(false);
 
 
+//=======
+
+        mysteryShip.gameObject.SetActive(false); //for a time. maybe kill and summon new one, even though player doesnt kill it.
+        //call powerup summon script
+//>>>>>>> e7379fc14eb58f8dc03fdd380e6f04d17d97380e
     }
 
-    public void OnBoundaryReached()
+    public void OnBoundaryReached() //change so that player looses health or something
     {
         if (invaders.gameObject.activeSelf)
         {
             invaders.gameObject.SetActive(false);
             OnPlayerKilled(player);
         }
+
     }
 
 }
