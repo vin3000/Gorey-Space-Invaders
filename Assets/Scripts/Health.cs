@@ -6,17 +6,17 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
 
-    public int currentHealth;
-    private int maxHealth = 100;
-    private int damage = 10;
-    public int heal = 2;
+    public float currentHealth;
+    private float maxHealth = 100f;
+    private float damage = 10f;
+    public float heal = 2f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Missile")) 
         {
             //GameManager.Instance.OnInvaderKilled(this); 
             //minska health med damage av laser
-            currentHealth -= (int)collision.gameObject.GetComponent<Missile>().damage;
+            currentHealth -= collision.gameObject.GetComponent<Missile>().damage;
         }
     }
 
