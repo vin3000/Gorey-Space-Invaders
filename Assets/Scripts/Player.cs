@@ -10,12 +10,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Variabler
-    public Bullet bulletPrefab;
-    private Bullet bullet;
+    public Rocket bulletPrefab;
+    private Rocket bullet;
     float speed = 10f;
 
     //Vapen Variabler
-    public Weapon glockPrefab, sniperPrefab;
+    public Weapon glockPrefab, sniperPrefab, rpgPrefab;
     Weapon currentWeapon;
     bool canShoot = true;
     bool waiting = false;
@@ -64,6 +64,10 @@ public class Player : MonoBehaviour
         {
             SwapWeapon(sniperPrefab);
         }
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SwapWeapon(rpgPrefab);
+        }
     }
     private void Shoot(int ammo, float fireRate, float damage, float projectileSpeed)
     {
@@ -80,7 +84,7 @@ public class Player : MonoBehaviour
                 soundEffect.Play();
             }
             //bullet = Instantiate(bulletPrefab, bulletPrefab.GameObject.Find("BulletTransform").transform.position, Quaternion.identity);
-            currentWeapon.SpawnBullet();
+            currentWeapon.SpawnProjectile();
             StartCoroutine(Cooldown(fireRate));
             currentWeapon.ammo -= 1;
             
