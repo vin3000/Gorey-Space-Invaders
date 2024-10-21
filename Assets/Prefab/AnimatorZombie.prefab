@@ -50,10 +50,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7160457787257155540, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_Name
-      value: Zombie_Base (1) Variant
+      value: AnimatorZombie
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7160457787257155540, guid: c31ee225578743042813b05530a64131, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4171988094027621408}
   m_SourcePrefab: {fileID: 100100000, guid: c31ee225578743042813b05530a64131, type: 3}
+--- !u!1 &3345402164235727262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7160457787257155540, guid: c31ee225578743042813b05530a64131, type: 3}
+  m_PrefabInstance: {fileID: 5562596314735418954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &4171988094027621408
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3345402164235727262}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: c6b98c43a369417448202f6748f15ecd, type: 2}
+  - {fileID: 7400000, guid: f8dd89aa980e4cd4aa273c87e41a9871, type: 2}
+  - {fileID: 7400000, guid: 6fa9b7522e1c62045965072981ef6916, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
