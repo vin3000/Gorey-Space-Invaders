@@ -105,7 +105,14 @@ public class Zombies : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Laser")) //layer name change to bullet?
         {
-            health -= collision.gameObject.GetComponent<Bullet>().damage;
+            if (collision.gameObject.GetComponent<Bullet>())
+            {
+                health -= collision.gameObject.GetComponent<Bullet>().damage;
+            }
+            /*if (collision.gameObject.GetComponent<Rocket>()) 
+            {
+                
+            }*/
         }
         else if ((collision.gameObject.layer == LayerMask.NameToLayer("Boundary"))||(collision.gameObject.layer==LayerMask.NameToLayer("player"))) //nått nedre kanten
         {
