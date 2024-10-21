@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
                 soundEffect.Play();
             }
             //bullet = Instantiate(bulletPrefab, bulletPrefab.GameObject.Find("BulletTransform").transform.position, Quaternion.identity);
-            currentWeapon.SpawnBullet(bulletPrefab);
+            currentWeapon.SpawnBullet();
             StartCoroutine(Cooldown(fireRate));
             currentWeapon.ammo -= 1;
             
