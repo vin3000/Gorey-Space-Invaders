@@ -16,9 +16,11 @@ public class Weapon : MonoBehaviour
 
     public GameObject bulletTransform;
 
-    public void SpawnBullet(Bullet bullet)
+    public void SpawnBullet(Bullet bulletPrefab)
     {
-
+        Bullet bullet = Instantiate(bulletPrefab, bulletTransform.transform.position, transform.rotation);
+        bullet.damage = damage;
+        bullet.speed = projectileSpeed;
     }
     public void removeObject()
     {
