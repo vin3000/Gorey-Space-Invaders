@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -10,10 +11,17 @@ public class Zombies : MonoBehaviour
      * Gör så att game manager letar efter denna istället för invaders
      */
 
+    /*
+     * MILTON JOBBAR!! Fixa animations
+     * byt ut mot annan projectile??
+     * gör så att koden ändrar waves (helst dynamic waves, inte hardcoded)
+     */
+
     public float speed = 10f;
     private Vector3 direction = Vector3.down;
     public float damage = 10f;
     public float health = 10f;
+    
 
     public bool isShooter = false;
     public bool isExplosive = false;
@@ -75,6 +83,7 @@ public class Zombies : MonoBehaviour
     }
     void Die()
     {
+
         //kalla partiklar
         if (isExplosive)
         {
