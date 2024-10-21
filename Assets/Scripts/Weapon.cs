@@ -16,7 +16,9 @@ public class Weapon : MonoBehaviour
 
     public GameObject bulletTransform;
 
-    public void SpawnBullet(Bullet bulletPrefab)
+    public Bullet bulletPrefab;
+
+    public void SpawnBullet()
     {
         Bullet bullet = Instantiate(bulletPrefab, bulletTransform.transform.position, transform.rotation);
         bullet.damage = damage;
