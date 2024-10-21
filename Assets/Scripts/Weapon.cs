@@ -14,13 +14,11 @@ public class Weapon : MonoBehaviour
 
     public float projectileSpeed { get; protected set; }
 
-    public Vector3 spritePos { get; protected set; }
+    public GameObject bulletTransform;
 
     public void SpawnBullet(Bullet bullet)
     {
-        Bullet spawnedBullet = Instantiate(bullet, bullet.transform.Find("BulletTransform").transform.position, Quaternion.identity);
-        spawnedBullet.damage = damage;
-        spawnedBullet.speed = projectileSpeed;
+
     }
     public void removeObject()
     {

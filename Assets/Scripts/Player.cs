@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
             if(currentWeapon.ammo <= 0)
             {
                 Console.WriteLine("no  more bullets :(");
-                currentWeapon = Instantiate(glockPrefab, glockPrefab.spritePos, Quaternion.identity, transform);
+                currentWeapon = Instantiate(glockPrefab, glockPrefab.transform.position, Quaternion.identity, transform);
                 return;
             }
             AudioSource soundEffect = currentWeapon.GetComponent<AudioSource>();
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
     {
         currentWeapon.removeObject();
         print(currentWeapon);
-        currentWeapon = Instantiate(newWeapon, newWeapon.spritePos, newWeapon.transform.rotation, transform);
+        currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation, transform);
     }
 
     IEnumerator Cooldown(float fireRate)
