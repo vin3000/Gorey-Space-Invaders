@@ -30,7 +30,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        currentWeapon = Instantiate(glockPrefab, glockPrefab.transform.position, glockPrefab.transform.rotation, transform);
+        currentWeapon = Instantiate(glockPrefab, glockPrefab.transform.position, glockPrefab.transform.rotation);
+        currentWeapon.transform.SetParent(transform, false);
     }
 
     // Update is called once per frame
@@ -91,7 +92,8 @@ public class Player : MonoBehaviour
     {
         currentWeapon.removeObject();
         print(currentWeapon);
-        currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation, transform);
+        currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation);
+        currentWeapon.transform.SetParent(transform, false);
     }
 
     IEnumerator Cooldown(float fireRate)
