@@ -11,4 +11,11 @@ public class Glock : Weapon
         damage = 5;
         projectileSpeed = 10f;
     }
+
+    public override void SpawnProjectile()
+    {
+        Bullet bullet = (Bullet)Instantiate(projectilePrefab, bulletTransform.transform.position, transform.rotation);
+        bullet.damage = damage;
+        bullet.speed = projectileSpeed;
+    }
 }

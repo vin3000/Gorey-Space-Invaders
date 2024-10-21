@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sniper : Weapon
+public class RPG : Weapon
 {
-    public Sniper()
+    public RPG()
     {
         baseAmmo = 3;
         ammo = baseAmmo;
@@ -12,10 +12,11 @@ public class Sniper : Weapon
         damage = 50;
         projectileSpeed = 30f;
     }
+
     public override void SpawnProjectile()
     {
-        Bullet bullet = Instantiate((Bullet) projectilePrefab, bulletTransform.transform.position, transform.rotation);
-        bullet.damage = damage;
-        bullet.speed = projectileSpeed;
+        Rocket rocket = Instantiate((Rocket) projectilePrefab, bulletTransform.transform.position, transform.rotation);
+        rocket.damage = damage;
+        rocket.speed = projectileSpeed;
     }
 }
