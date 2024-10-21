@@ -53,6 +53,10 @@ public class Zombies : MonoBehaviour
             GameObject summon2 = Instantiate(summonPrefab, new Vector3(transform.position.x + 1, transform.position.y, 0), Quaternion.identity);
             summon.GetComponent<Zombies>().speed = speed + 2f;
             summon2.GetComponent<Zombies>().speed = speed + 2f;
+            if (isInfested)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -75,12 +79,18 @@ public class Zombies : MonoBehaviour
         if (isExplosive)
         {
             //kalla explosion
+            //temporary
+            Destroy(gameObject);
         }
         if (isInfested)
         {
             SummoningZombies(); //gör så summon skript kollar hur många som ska summonas
         }
-        Destroy(gameObject);
+        else
+        {
+
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
