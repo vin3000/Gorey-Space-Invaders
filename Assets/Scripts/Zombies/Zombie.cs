@@ -8,13 +8,13 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Zombies : MonoBehaviour
 {
     /*
-     * Gör så att game manager letar efter denna istället för invaders
+     * Gï¿½r sï¿½ att game manager letar efter denna istï¿½llet fï¿½r invaders
      */
 
     /*
      * MILTON JOBBAR!! Fixa animations
      * byt ut mot annan projectile??
-     * gör så att koden ändrar waves (helst dynamic waves, inte hardcoded)
+     * gï¿½r sï¿½ att koden ï¿½ndrar waves (helst dynamic waves, inte hardcoded)
      */
 
     public float speed = 10f;
@@ -61,7 +61,7 @@ public class Zombies : MonoBehaviour
         float rand = UnityEngine.Random.value;
         if (rand < 0.2)
         {
-            //kolla för ett snyggare sätt att göra detta
+            //kolla fï¿½r ett snyggare sï¿½tt att gï¿½ra detta
             GameObject summon = Instantiate(summonPrefab, new Vector3(transform.position.x-1,transform.position.y,0), Quaternion.identity);
             GameObject summon2 = Instantiate(summonPrefab, new Vector3(transform.position.x + 1, transform.position.y, 0), Quaternion.identity);
             summon.GetComponent<Zombies>().speed = speed + 2f;
@@ -98,7 +98,7 @@ public class Zombies : MonoBehaviour
         }
         if (isInfested)
         {
-            SummoningZombies(); //gör så summon skript kollar hur många som ska summonas
+            SummoningZombies(); //gï¿½r sï¿½ summon skript kollar hur mï¿½nga som ska summonas
         }
         else
         {
@@ -121,20 +121,20 @@ public class Zombies : MonoBehaviour
                 
             }*/
         }
-        else if ((collision.gameObject.layer == LayerMask.NameToLayer("Boundary"))||(collision.gameObject.layer==LayerMask.NameToLayer("player"))) //nått nedre kanten
+        else if ((collision.gameObject.layer == LayerMask.NameToLayer("Boundary"))||(collision.gameObject.layer==LayerMask.NameToLayer("player"))) //nï¿½tt nedre kanten
         {
             GameObject Player = GameObject.Find("Player");
             Player.GetComponent<Health>().currentHealth -= damage; //make it so that it kills a bit of health
-            GameManager.Instance.OnBoundaryReached(); //här letar game manager efter invaders, när koden här har blivit individ baserad. MAY OR MAY NOT BE USELESS. I think this is the "damage player if edge" thing
+            GameManager.Instance.OnBoundaryReached(); //hï¿½r letar game manager efter invaders, nï¿½r koden hï¿½r har blivit individ baserad. MAY OR MAY NOT BE USELESS. I think this is the "damage player if edge" thing
 
         }
     }
 }
 
 
-//skapa subklasser av zombier. Varje klass ska innehålla zombiens actions. Som Invader skripten.
+//skapa subklasser av zombier. Varje klass ska innehï¿½lla zombiens actions. Som Invader skripten.
 /* critter
- * Långsam skjutare
+ * Lï¿½ngsam skjutare
  * Explosiv
  * Boss
  * 
@@ -144,5 +144,5 @@ public class Zombies : MonoBehaviour
  * fast as shit
  */
 
-//Ändra till annan prefab
+//ï¿½ndra till annan prefab
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class freezeframe : MonoBehaviour
+public class Freezeframe : MonoBehaviour
 {
     [Range(0f, 1.5f)]
     float Duration = 1f;
