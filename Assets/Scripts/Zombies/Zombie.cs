@@ -31,8 +31,12 @@ public class Zombies : MonoBehaviour
 
     public Missile missilePrefab;
     public GameObject summonPrefab;
+    Animator anim;
+    public aniamtionspeed;
     public void Start()
     {
+        anim = GetComponent<Animator>();
+        
         if (isShooter)
         {
             InvokeRepeating(nameof(MissileAttack), 1, 1);
@@ -97,6 +101,8 @@ public class Zombies : MonoBehaviour
         }
         else
         {
+            
+           
 
             Destroy(gameObject);
         }

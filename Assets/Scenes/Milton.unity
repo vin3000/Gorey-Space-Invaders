@@ -1265,10 +1265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
-  bullet: {fileID: 0}
-  source: {fileID: 0}
-  clip: {fileID: 0}
-  weaponSprites: []
+  glockPrefab: {fileID: 0}
+  sniperPrefab: {fileID: 0}
 --- !u!61 &1934562384
 BoxCollider2D:
   m_ObjectHideFlags: 0
