@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
     //Variabler
     public int baseAmmo { get; protected set; }
@@ -16,14 +16,7 @@ public class Weapon : MonoBehaviour
 
     public GameObject bulletTransform;
 
-    public Bullet bulletPrefab;
-
-    public void SpawnBullet()
-    {
-        Bullet bullet = Instantiate(bulletPrefab, bulletTransform.transform.position, transform.rotation);
-        bullet.damage = damage;
-        bullet.speed = projectileSpeed;
-    }
+    public abstract void SpawnProjectile();
     public void removeObject()
     {
         Destroy(gameObject);
