@@ -31,8 +31,7 @@ public class Zombies : MonoBehaviour
 
     public Missile missilePrefab;
     public GameObject summonPrefab;
-    Animator anim;
-    public aniamtionspeed;
+    
     public void Start()
     {
         anim = GetComponent<Animator>();
