@@ -31,11 +31,11 @@ public class Zombies : MonoBehaviour
 
     public Missile missilePrefab;
     public GameObject summonPrefab;
-    Animator anim;
-    public aniamtionspeed;
+    //Animator anim;
+    //public aniamtionspeed;
     public void Start()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         
         if (isShooter)
         {
@@ -57,6 +57,7 @@ public class Zombies : MonoBehaviour
     }
     void SummoningZombies()
     {
+
         float rand = UnityEngine.Random.value;
         if (rand < 0.2)
         {
