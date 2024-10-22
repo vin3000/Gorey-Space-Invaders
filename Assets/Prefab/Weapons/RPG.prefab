@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f69551ed022a5488744849ee6478c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 3
+  ammo: 259
   bulletTransform: {fileID: 4430831779742124722}
-  projectilePrefab: {fileID: -2045863172057667573, guid: 96608dad1e1a5e143bf91dd250c227f3, type: 3}
+  rocketPrefab: {fileID: 6436592774148488623, guid: 96608dad1e1a5e143bf91dd250c227f3, type: 3}
+  explosionParticle: {fileID: 4726354546416784308, guid: ef84ca2451ce54444b1c1e14c88d59f6, type: 3}

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Glock : Weapon
 {
+    public Bullet bulletPrefab;
     public Glock()
     {
         baseAmmo = int.MaxValue;
@@ -14,7 +15,7 @@ public class Glock : Weapon
 
     public override void SpawnProjectile()
     {
-        Bullet bullet = (Bullet)Instantiate(projectilePrefab, bulletTransform.transform.position, transform.rotation);
+        Bullet bullet = Instantiate(bulletPrefab, bulletTransform.transform.position, transform.rotation);
         bullet.damage = damage;
         bullet.speed = projectileSpeed;
     }

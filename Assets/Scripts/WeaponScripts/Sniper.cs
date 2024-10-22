@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sniper : Weapon
 {
+    public Bullet sniperBulletPrefab;
     public Sniper()
     {
         baseAmmo = 3;
@@ -14,7 +15,7 @@ public class Sniper : Weapon
     }
     public override void SpawnProjectile()
     {
-        Bullet bullet = Instantiate((Bullet) projectilePrefab, bulletTransform.transform.position, transform.rotation);
+        Bullet bullet = Instantiate(sniperBulletPrefab, bulletTransform.transform.position, transform.rotation);
         bullet.damage = damage;
         bullet.speed = projectileSpeed;
     }

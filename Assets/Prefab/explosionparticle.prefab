@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1570523996390066814}
   - component: {fileID: 3103465066222451337}
   - component: {fileID: 3328700533670342198}
+  - component: {fileID: 2167148949582299435}
   m_Layer: 0
   m_Name: explosionparticle
   m_TagString: Untagged
@@ -4918,9 +4919,21 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 4.5
+--- !u!114 &2167148949582299435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4726354546416784308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f781f03c860e498c38daad81d6dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

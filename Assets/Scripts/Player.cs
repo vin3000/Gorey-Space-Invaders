@@ -10,8 +10,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Variabler
-    public Rocket bulletPrefab;
-    private Rocket bullet;
     float speed = 10f;
 
     //Vapen Variabler
@@ -76,8 +74,8 @@ public class Player : MonoBehaviour
             if(currentWeapon.ammo <= 0)
             {
                 Console.WriteLine("no  more bullets :(");
-                currentWeapon = Instantiate(glockPrefab, glockPrefab.transform.position, Quaternion.identity, transform);
-                return;
+                currentWeapon.removeObject();
+                SwapWeapon(glockPrefab);
             }
             AudioSource soundEffect = currentWeapon.GetComponent<AudioSource>();
             if(soundEffect != null) {

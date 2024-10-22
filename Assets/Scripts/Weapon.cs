@@ -16,8 +16,6 @@ public abstract class Weapon : MonoBehaviour
 
     public GameObject bulletTransform;
 
-    public Projectile projectilePrefab;
-
     public abstract void SpawnProjectile();
     public void removeObject()
     {
