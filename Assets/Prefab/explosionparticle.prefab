@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1570523996390066814}
   - component: {fileID: 3103465066222451337}
   - component: {fileID: 3328700533670342198}
-  - component: {fileID: 2167148949582299435}
+  - component: {fileID: 1215711696759413813}
   m_Layer: 0
   m_Name: explosionparticle
   m_TagString: Untagged
@@ -4925,7 +4925,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 4.5
---- !u!114 &2167148949582299435
+--- !u!114 &1215711696759413813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

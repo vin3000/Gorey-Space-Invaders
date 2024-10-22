@@ -6,24 +6,21 @@ using UnityEngine;
 public class RPG : Weapon
 {
     public Rocket rocketPrefab;
-    public GameObject explosionParticle;
+    private float explosionDamage = 100f;
     public RPG()
     {
-        baseAmmo = 5; //ändra tillbaka, bara för testing
+        baseAmmo = 5;
         ammo = baseAmmo;
-        fireRate = 0.1f; //ändra tillbaka, bara för testing
+        fireRate = 2.5f; //ändra tillbaka, bara för testing
         damage = 50;
-        projectileSpeed = 30f;
+        projectileSpeed = 20f;
     }
 
     public override void SpawnProjectile()
     {
         Rocket rocket = Instantiate(rocketPrefab, bulletTransform.transform.position, transform.rotation);
-        print("changed");
-        print(rocket.transform.position);
         rocket.damage = damage;
+        rocket.explosionDamage = explosionDamage;
         rocket.speed = projectileSpeed;
-
-        CircleCollider2D rocketCollider = explosionParticle.GetComponent<CircleCollider2D>();
     }
 }

@@ -9,6 +9,7 @@ public class Rocket : Projectile
 {
     public float damage;
     public float explosionDamage;
+    public Explosion explosionParticle;
     private void Awake()
     {
         direction = Vector3.up;
@@ -30,7 +31,10 @@ public class Rocket : Projectile
 
         if(bunker == null) //Om det inte är en bunker vi träffat så ska skottet försvinna.
         {
+            Explosion explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
+            explosion.explosionDamage = explosionDamage;
             Destroy(gameObject);
+            Destroy(explosion, 1.5f);
         }
     }
 }

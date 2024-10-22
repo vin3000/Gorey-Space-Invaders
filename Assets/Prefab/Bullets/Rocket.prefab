@@ -188,3 +188,4 @@ MonoBehaviour:
   speed: 10
   damage: 100
   explosionDamage: 0
+  explosionParticle: {fileID: 4726354546416784308, guid: ef84ca2451ce54444b1c1e14c88d59f6, type: 3}

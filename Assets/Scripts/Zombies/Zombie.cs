@@ -116,10 +116,15 @@ public class Zombies : MonoBehaviour
             {
                 health -= collision.gameObject.GetComponent<Bullet>().damage;
             }
-            /*if (collision.gameObject.GetComponent<Rocket>()) 
+            if (collision.gameObject.GetComponent<Rocket>()) 
             {
-                
-            }*/
+                health -= collision.gameObject.GetComponent<Rocket>().damage;
+            }
+        }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        {
+            health -= collision.gameObject.GetComponent<Explosion>().explosionDamage;
+           // lägg till en explosion damage variabel på explosion grejen
         }
         else if ((collision.gameObject.layer == LayerMask.NameToLayer("Boundary"))||(collision.gameObject.layer==LayerMask.NameToLayer("player"))) //nï¿½tt nedre kanten
         {
