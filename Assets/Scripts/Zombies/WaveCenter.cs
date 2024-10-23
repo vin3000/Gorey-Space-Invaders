@@ -1,25 +1,35 @@
+using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
+using UnityEditor.Timeline.Actions;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class WaveCenter : MonoBehaviour
 {
     
-    /*
-     * 1 - full cube (decide how wide) (r8,c8)
-     * 2 - line (decide how many after eachother) (r1,c8)
-     * 3 - random circle
-     * 4 - Rectangle (dynamic to difficulty)
+    /* Till game manager!!!
      * 
-     * 1 and 3 can instantiate special guys (with regular speed??)
+     * waves appear in dynamic squares relative to difficulty (8*8 is SUPER HARD)
+     * Waves kan instantiatas vid 1 av 4 olika summoners
+     * kan summona individuella zombies
+     * framkallar specifik mängd av waves (eller framkallar x wave svårighet varje y sekunder tills timer är slut)
+     * framkalla bossar var 5 wave
+     * framkalla många bossar sista wave
      * 
-     * gör så att wavecenter rör sig, och dör när alla invaders dör (ELLER försvinner efter en liten stund)
-     * gör så att wavecenter flyttar wave inte individuella zombies
+     * Variabler;
+     * wave number
+     * time between spawns
+     * special spawns (lista)
+     * storlek baserad på svårighet/prefab lista??
+     * 
+     * antal spawns/timer
+     * 
      */
     
-    public int waveNumber;
-
     private Vector3 initialPosition;
     public int row;
     public int col;
@@ -29,12 +39,19 @@ public class WaveCenter : MonoBehaviour
      * 2 - hard, 11-15
      * 3 - supah zombie mode - 16-20
      */
-    public Zombies critterPrefab;
+    public Zombies mainZombiePrefab; //the regular little guys
+    public bool hasSpecial; //ska den ha en speciel? t.ex gun troops ska ej ha annat.
+    public Zombies[] specZombiePrefabs = new Zombies[4]; //whatever spawns in the special spot (0-Expl, 1-*//* + expl, 2- *//* + infest, 3- *//*one extra explode, to make it easier to kill bosses)
+    Zombies specZombiePrefab;
+    public float speed;
     BoxCollider2D m_Collider;
     
-    // Start is called before the first frame update
-    void Awake()
+    void Awake() //en speciel zombie per wave
     {
+        int a = UnityEngine.Random.Range(0, difficulty + 1);
+        Debug.Log(a);
+        specZombiePrefab = specZombiePrefabs[a];
+        
         initialPosition = transform.position;
         CreateInvaderGrid();
         m_Collider = GetComponent<BoxCollider2D>();
@@ -43,6 +60,7 @@ public class WaveCenter : MonoBehaviour
 
     void Update()
     {
+        transform.position += speed * Time.deltaTime * Vector3.down; //move
         int zombCount = GetZombieCount();
         if (zombCount == 0)
         {
@@ -51,6 +69,16 @@ public class WaveCenter : MonoBehaviour
     }
     void CreateInvaderGrid()
     {
+        float rand = UnityEngine.Random.value;
+        bool spawnSpecial = false;
+        if (rand < 0.5) //beror på difficulty?? och wave size????
+        {
+            spawnSpecial = true;
+        }
+
+        float randRow = SetSpecPosition(row);
+        float randCol = SetSpecPosition(col);
+        Debug.Log($"RandRow = {randRow}  randCol = {randCol}");
         for (int r = 0; r < row; r++)
         {
             float width = 2f * (col - 1);
@@ -62,13 +90,34 @@ public class WaveCenter : MonoBehaviour
 
             for (int c = 0; c < col; c++)
             {
-                Zombies tempZombie = Instantiate(critterPrefab, transform);
-
+                Zombies tempZombie;
+                if (hasSpecial && spawnSpecial && r == randRow && c == randCol)
+                {
+                    tempZombie = Instantiate(specZombiePrefab, transform);
+                }
+                else
+                {
+                    tempZombie = Instantiate(mainZombiePrefab, transform);
+                }
                 Vector3 position = rowPosition;
                 position.x += c;
                 tempZombie.transform.localPosition = position;
+                tempZombie.speed = 0;
             }
         }
+    }
+    private int SetSpecPosition(int a) //returns a position in the wave (for column or row)
+    {
+        int position;
+        if (a == 1 || a == 2)
+        {
+            position = 0;
+        }
+        else
+        {
+            position = UnityEngine.Random.Range(1, row - 1);
+        }
+        return position;
     }
     public int GetZombieCount()
     {
@@ -79,6 +128,8 @@ public class WaveCenter : MonoBehaviour
             if (Zombie.gameObject.activeSelf)
                 nr++;
         }
+
+        Debug.Log(nr);
         return nr;
     }
     private void OnCollisionStay2D(Collision2D collision)

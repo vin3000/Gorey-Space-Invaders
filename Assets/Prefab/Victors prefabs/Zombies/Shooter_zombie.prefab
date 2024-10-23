@@ -25,6 +25,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2928387397767185232, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: isExplosive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928387397767185232, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: missilePrefab
       value: 
       objectReference: {fileID: 6237745307908444816, guid: 5469e6c785da15841b47da9bf6a5a0a8, type: 3}
@@ -66,6 +70,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464358795957911870, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464358795957911870, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: m_Color.g
+      value: 0.28951353
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464358795957911870, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7160457787257155540, guid: c31ee225578743042813b05530a64131, type: 3}

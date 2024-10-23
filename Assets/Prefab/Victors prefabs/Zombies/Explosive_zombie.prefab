@@ -64,9 +64,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5464358795957911870, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464358795957911870, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: m_Color.g
+      value: 0.114804335
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464358795957911870, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7160457787257155540, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_Name
-      value: Zombie_Base Variant
+      value: Explosive_zombie
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
