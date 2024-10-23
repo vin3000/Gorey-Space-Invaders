@@ -133,12 +133,13 @@ public class GameManager : MonoBehaviour
 
     public void OnBoundaryReached() //change so that player looses health or something
     {
-        if (invaders.gameObject.activeSelf)
+        /*
+       if (invaders.gameObject.activeSelf)
         {
             invaders.gameObject.SetActive(false);
             OnPlayerKilled(player);
         }
-
+       */ //Kanske ta bort???
     }
 
 }

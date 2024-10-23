@@ -4,15 +4,5 @@ using UnityEngine;
 
 public class Powerup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //Lägg till circle collider som anropar spelarens swapweapon metod med ett random nummer
 }

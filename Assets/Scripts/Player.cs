@@ -93,7 +93,6 @@ public class Player : MonoBehaviour
     private void SwapWeapon(Weapon newWeapon)
     {
         currentWeapon.removeObject();
-        print(currentWeapon);
         currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation);
         currentWeapon.transform.SetParent(transform, false);
     }

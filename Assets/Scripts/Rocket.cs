@@ -10,12 +10,12 @@ public class Rocket : Projectile
     public float damage;
     public float explosionDamage;
     public Explosion explosionParticle;
-    private ParticleSystem partSys;
+    private ParticleSystem explosionPartSys;
 
     private void Awake()
     {
         direction = Vector3.up;
-        partSys = GetComponent<ParticleSystem>();
+        explosionPartSys = explosionParticle.GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -34,12 +34,10 @@ public class Rocket : Projectile
 
         if(bunker == null) //Om det inte är en bunker vi träffat så ska skottet försvinna.
         {
+            Destroy(gameObject);
             Explosion explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
             explosion.explosionDamage = explosionDamage;
-            Destroy(gameObject);
-            Destroy(explosion.GetComponent<CircleCollider2D>());
-            print(partSys.main.duration);
-            Destroy(explosion, partSys.main.duration);
+            Destroy(explosion, explosionPartSys.main.duration);
         }
     }
 }
