@@ -10,9 +10,12 @@ public class Rocket : Projectile
     public float damage;
     public float explosionDamage;
     public Explosion explosionParticle;
+    private ParticleSystem partSys;
+
     private void Awake()
     {
         direction = Vector3.up;
+        partSys = GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -34,7 +37,9 @@ public class Rocket : Projectile
             Explosion explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
             explosion.explosionDamage = explosionDamage;
             Destroy(gameObject);
-            Destroy(explosion, 1.5f);
+            Destroy(explosion.GetComponent<CircleCollider2D>());
+            print(partSys.main.duration);
+            Destroy(explosion, partSys.main.duration);
         }
     }
 }
