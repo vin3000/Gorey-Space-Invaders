@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WaveCenter : MonoBehaviour
 {
+    
     /*
      * 1 - full cube (decide how wide) (r8,c8)
      * 2 - line (decide how many after eachother) (r1,c8)
@@ -13,9 +15,12 @@ public class WaveCenter : MonoBehaviour
      * 1 and 3 can instantiate special guys (with regular speed??)
      * 
      * gör så att wavecenter rör sig, och dör när alla invaders dör (ELLER försvinner efter en liten stund)
+     * gör så att wavecenter flyttar wave inte individuella zombies
      */
+    
     public int waveNumber;
 
+    private Vector3 initialPosition;
     public int row;
     public int col;
     public int difficulty; //0->3
@@ -28,19 +33,21 @@ public class WaveCenter : MonoBehaviour
     BoxCollider2D m_Collider;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        initialPosition = transform.position;
         CreateInvaderGrid();
         m_Collider = GetComponent<BoxCollider2D>();
-        //These are the starting sizes for the Collider component
-
         m_Collider.size = new Vector2(row, col);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        int zombCount = GetZombieCount();
+        if (zombCount == 0)
+        {
+            Destroy(gameObject);
+        }
     }
     void CreateInvaderGrid()
     {
@@ -73,5 +80,17 @@ public class WaveCenter : MonoBehaviour
                 nr++;
         }
         return nr;
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Invader"))
+        {
+            return;
+        }
+        else
+        {
+            Destroy(m_Collider);
+            print("I tried to kill myself");
+        }
     }
 }
