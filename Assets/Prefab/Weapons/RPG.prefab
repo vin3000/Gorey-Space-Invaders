@@ -60,7 +60,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0.571, y: -0.033, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7309784705428459103}
@@ -229,4 +229,3 @@ MonoBehaviour:
   ammo: 259
   bulletTransform: {fileID: 4430831779742124722}
   rocketPrefab: {fileID: 6436592774148488623, guid: 96608dad1e1a5e143bf91dd250c227f3, type: 3}
-  explosionParticle: {fileID: 4726354546416784308, guid: ef84ca2451ce54444b1c1e14c88d59f6, type: 3}

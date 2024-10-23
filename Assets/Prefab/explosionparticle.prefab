@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3103465066222451337}
   - component: {fileID: 3328700533670342198}
   - component: {fileID: 1215711696759413813}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: explosionparticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4937,3 +4937,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2f781f03c860e498c38daad81d6dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionDamage: 0
