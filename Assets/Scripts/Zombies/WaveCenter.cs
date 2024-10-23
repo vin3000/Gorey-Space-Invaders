@@ -18,6 +18,12 @@ public class WaveCenter : MonoBehaviour
 
     public int row;
     public int col;
+    public int difficulty; //0->3
+    /* 0 - easy, 1-5
+     * 1 - medium, 6-10
+     * 2 - hard, 11-15
+     * 3 - supah zombie mode - 16-20
+     */
     public Zombies critterPrefab;
     BoxCollider2D m_Collider;
     
