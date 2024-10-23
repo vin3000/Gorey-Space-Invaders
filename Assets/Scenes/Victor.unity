@@ -973,6 +973,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8184595157597878950, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+      propertyPath: rpgPrefab
+      value: 
+      objectReference: {fileID: 5470397480272682229, guid: 0771411a0897db043a2432e43610b498, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1011,6 +1015,7 @@ MonoBehaviour:
   waveNumber: 0
   row: 8
   col: 8
+  difficulty: 0
   critterPrefab: {fileID: 3404339036299607410, guid: 58da98eedf9715142b7f266e15e5f6f8, type: 3}
 --- !u!4 &834695234
 Transform:
@@ -1021,7 +1026,7 @@ Transform:
   m_GameObject: {fileID: 834695232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 20.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1851,7 +1856,7 @@ Transform:
   m_GameObject: {fileID: 1784555592}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 20.3, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
