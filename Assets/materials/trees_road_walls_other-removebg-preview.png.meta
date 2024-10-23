@@ -1,0 +1,1086 @@
+fileFormatVersion: 2
+guid: 599d69efdec092a4c87cc1b81e897147
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: walls and tree and defenses
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 249
+        width: 142
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c1efc599e0a824382662108c0be622
+      internalID: -479187384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 277
+        width: 80
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516bda2280d104147898020a81c63fe9
+      internalID: -1398339134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 350
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d825b7cd137bd3a438cb769436452520
+      internalID: 488232220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 246
+        width: 180
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7b5cec5371a964ea1c1f0f49ff9316
+      internalID: 2104725504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 282
+        width: 185
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49759a5e8f389443b6b18005f62b4ec
+      internalID: 174075431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 327
+        width: 46
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580db4b51f652b54da7f39019e3518c4
+      internalID: 1803878608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 315
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a72e1e33d231b34d81a2e3e29a1e97b
+      internalID: -2112795370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 280
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1884c55558a572f4dab541192ca8bec0
+      internalID: -1606925117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 280
+        width: 36
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ba199f9912ed843bf0b612a5d0adca
+      internalID: -2095739325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 212
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fffad59b3b382468438106438a8fe5
+      internalID: -2114332244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 212
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126a0c67860f015478ba5c8774c1ba1e
+      internalID: 577276553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 167
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438add3974d91d04f8fdd871e19c3909
+      internalID: -816074250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 139
+        width: 284
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39372a69749b6242a494245060e4bca
+      internalID: 771261952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 209
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5195c081f320048b746a395dd059c1
+      internalID: 200218609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 212
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a47731ddf6cece4399cf63b9697167d
+      internalID: 1644992118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 212
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8fabec4321eb564d85e674b328e282f
+      internalID: 1189067343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 211
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e28fd55617c06540b91c37ad21f794d
+      internalID: 380647397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 22
+        width: 49
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7335ebac218514aa3c1e420e059db0
+      internalID: -717922504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 182
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fbf29febfcd1c645aba58d26be02a16
+      internalID: 192163662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 177
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6757e685a372a043a178d39360a0643
+      internalID: 1956929038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 181
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f78eb5c616075a4f9c81e237f25e354
+      internalID: -2058999971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 186
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8083cfb5f06b08945935c40c2a0adfd8
+      internalID: -820135436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 180
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3453a19990fc2f42b4c75acdd5d68dd
+      internalID: 462448781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 177
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901ce5109c336db458edac8b96d6c628
+      internalID: 761183516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 180
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43fee6ecef8dd04886a58fac9c2b8ad
+      internalID: -2091579644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 181
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fcee2626d179404c83b9206d17b9492
+      internalID: -660074449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 97
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13fa17d9d21bdff4fbaa4569bdb9b4a8
+      internalID: -378134472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 117
+        width: 8
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d6d93b9610f974ea43be525871a7ad
+      internalID: 1106846914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 151
+        width: 30
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c626a02d1ca0d6241982f572fe32210b
+      internalID: -2012136185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 57
+        width: 12
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b96a918bf814c42afccb5ac37ac963
+      internalID: 192684422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 135
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66246e347936b4748b143ec5fc3774e5
+      internalID: 673181686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 33
+        width: 207
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078de69fcecbebf4fa4f676a8f8ac3b1
+      internalID: 38688607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 12
+        width: 10
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ffbdbae626a6a4b961b76c76ad4c68
+      internalID: 1889826785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 81
+        width: 109
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1bb74995eb78db4695e9e6783a73417
+      internalID: -1498964417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 86
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c79719d9f2412941b13283e1a65d6f9
+      internalID: -1019302433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 40
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190984a66ef692241aa782337ec4933c
+      internalID: -2069147487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 27
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67dc470f12457ae49a013d30eb216bb1
+      internalID: 2090567564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 20
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c044ddf0b460d4aa2eb3cb589e9ae1
+      internalID: 1570585938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 59
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31351c05b82a98a4a85cc029603b523e
+      internalID: -2145351032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 27
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1e9634b13970949923ef2d97306ec5
+      internalID: 1548514359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_40
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 49
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdc7f75a9ec79747bf323fe249fa43f
+      internalID: 890381075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_41
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 22
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2ce18be5de9d54fb4747ca9fdd2fa9
+      internalID: -2095988148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees_road_walls_other-removebg-preview_42
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 26
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8673681d594b794c8d3d149b846a2c5
+      internalID: 1859922758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      trees_road_walls_other-removebg-preview_1: -1398339134
+      trees_road_walls_other-removebg-preview_10: 577276553
+      trees_road_walls_other-removebg-preview_11: -816074250
+      trees_road_walls_other-removebg-preview_12: 771261952
+      trees_road_walls_other-removebg-preview_13: 200218609
+      trees_road_walls_other-removebg-preview_14: 1644992118
+      trees_road_walls_other-removebg-preview_15: 1189067343
+      trees_road_walls_other-removebg-preview_16: 380647397
+      trees_road_walls_other-removebg-preview_17: -717922504
+      trees_road_walls_other-removebg-preview_18: 192163662
+      trees_road_walls_other-removebg-preview_19: 1956929038
+      trees_road_walls_other-removebg-preview_2: 488232220
+      trees_road_walls_other-removebg-preview_20: -2058999971
+      trees_road_walls_other-removebg-preview_21: -820135436
+      trees_road_walls_other-removebg-preview_22: 462448781
+      trees_road_walls_other-removebg-preview_23: 761183516
+      trees_road_walls_other-removebg-preview_24: -2091579644
+      trees_road_walls_other-removebg-preview_25: -660074449
+      trees_road_walls_other-removebg-preview_26: -378134472
+      trees_road_walls_other-removebg-preview_27: 1106846914
+      trees_road_walls_other-removebg-preview_28: -2012136185
+      trees_road_walls_other-removebg-preview_29: 192684422
+      trees_road_walls_other-removebg-preview_3: 2104725504
+      trees_road_walls_other-removebg-preview_30: 673181686
+      trees_road_walls_other-removebg-preview_31: 38688607
+      trees_road_walls_other-removebg-preview_32: 1889826785
+      trees_road_walls_other-removebg-preview_33: -1498964417
+      trees_road_walls_other-removebg-preview_34: -1019302433
+      trees_road_walls_other-removebg-preview_35: -2069147487
+      trees_road_walls_other-removebg-preview_36: 2090567564
+      trees_road_walls_other-removebg-preview_37: 1570585938
+      trees_road_walls_other-removebg-preview_38: -2145351032
+      trees_road_walls_other-removebg-preview_39: 1548514359
+      trees_road_walls_other-removebg-preview_4: 174075431
+      trees_road_walls_other-removebg-preview_40: 890381075
+      trees_road_walls_other-removebg-preview_41: -2095988148
+      trees_road_walls_other-removebg-preview_42: 1859922758
+      trees_road_walls_other-removebg-preview_5: 1803878608
+      trees_road_walls_other-removebg-preview_6: -2112795370
+      trees_road_walls_other-removebg-preview_7: -1606925117
+      trees_road_walls_other-removebg-preview_8: -2095739325
+      trees_road_walls_other-removebg-preview_9: -2114332244
+      walls and tree and defenses: -479187384
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
