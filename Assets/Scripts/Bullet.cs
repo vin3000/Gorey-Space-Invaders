@@ -16,6 +16,10 @@ public class Bullet : Projectile
     void Update()
     {
         transform.position += speed * Time.deltaTime * direction;
+        if(gameObject.transform.position.y > 30)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

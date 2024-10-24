@@ -171,7 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af1397425a4c6446ad6cc9c449d3374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: -1786484066289242039, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}
   glockPrefab: {fileID: 4610839503408435601, guid: 80e72ef6c91564f4bbabe800e31c7600, type: 3}
   sniperPrefab: {fileID: -5015788467159530059, guid: 8c703f68c01cf89499776631125f474b, type: 3}
   rpgPrefab: {fileID: 0}

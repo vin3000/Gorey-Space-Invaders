@@ -37,6 +37,7 @@ public class Rocket : Projectile
             Destroy(gameObject);
             Explosion explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
             explosion.explosionDamage = explosionDamage;
+            explosion.soundEffect.PlayOneShot(explosion.soundEffect.clip, 0.05f);
             Destroy(explosion, explosionPartSys.main.duration);
         }
     }

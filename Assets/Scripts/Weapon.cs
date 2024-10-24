@@ -21,6 +21,10 @@ public abstract class Weapon : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    public void Start()
+    {
+        ammo = baseAmmo;
+    }
 
     //fixa sprites för alla vapen 
 }
