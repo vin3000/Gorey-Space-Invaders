@@ -6,7 +6,7 @@ using UnityEngine;
 public class Powerup : Projectile
 {
     SpriteRenderer _sprite;
-    float interval = 0.2f;
+    float interval = 0.25f;
     bool _running = false;
     private void Awake()
     {
@@ -16,7 +16,7 @@ public class Powerup : Projectile
     {
         if(_running == false)
         {
-            StartCoroutine(swapColor());
+            StartCoroutine(weaponRoulette());
         }
         if(transform.position.y < -20)
         {
@@ -24,13 +24,16 @@ public class Powerup : Projectile
         }
         transform.position += speed * Time.deltaTime * direction;
     }
-    //Lägg till circle collider som anropar spelarens swapweapon metod med ett random nummer
-    IEnumerator swapColor()
+    IEnumerator weaponRoulette()
     {
         _running = true;
-        _sprite = gameObject.GetComponent<SpriteRenderer>();
-        _sprite.color = Random.ColorHSV();
-        yield return new WaitForSeconds(interval);
+        foreach (Transform weapon in transform)
+        { //Sätter vapnena till active och false om och om igen så att det blir som en roulette
+            print(weapon.gameObject.name);
+            weapon.gameObject.SetActive(true);
+            yield return new WaitForSeconds(interval);
+            weapon.gameObject.SetActive(false);
+        }
         _running = false;
     }
 

@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -14,11 +16,11 @@ public class Player : MonoBehaviour
     // Variabler
     float speed = 10f;
     KeyCode shootKey = KeyCode.Space;
-    [SerializeField]
-    Slider ammoBar;
+    public Slider ammoBar;
 
     //Vapen Variabler
-    public Weapon glockPrefab, sniperPrefab, rpgPrefab, smgPrefab;
+    public Weapon glockPrefab, sniperPrefab, RPGPrefab, SMGPrefab;
+    public Powerup powerupPrefab;
     Weapon currentWeapon;
     public AudioSource weaponSoundEffect;
     bool canShoot = true;
@@ -65,17 +67,30 @@ public class Player : MonoBehaviour
         {
             Shoot(currentWeapon.ammo, currentWeapon.fireRate, currentWeapon.damage, currentWeapon.projectileSpeed);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
+        if(Input.GetKeyDown(KeyCode.E))
         {
-            SwapWeapon(sniperPrefab);
+            Vector3 randomPos = new Vector3(Random.Range(-14.5f, 14.5f), 14, 0);
+            print(powerupPrefab);
+            Instantiate(powerupPrefab, randomPos, Quaternion.identity);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha3))
+        if (Application.isEditor)
         {
-            SwapWeapon(rpgPrefab);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SwapWeapon(smgPrefab);
+            if(Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SwapWeapon(glockPrefab);
+            }
+            else if(Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SwapWeapon(sniperPrefab);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SwapWeapon(SMGPrefab);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                SwapWeapon(RPGPrefab);
+            }
         }
     }
     private void Shoot(int ammo, float fireRate, float damage, float projectileSpeed)
@@ -130,10 +145,10 @@ public class Player : MonoBehaviour
         weaponSoundEffect.clip = currentWeapon.soundEffect.clip;
         if(newWeapon != glockPrefab)
         {
+            Debug.Log((float)currentWeapon.ammo / (float)currentWeapon.baseAmmo);
             UpdateAmmoBar();
             EnableAmmoBar();
         }
-        EnableAmmoBar();
     }
 
     IEnumerator Cooldown(float fireRate)
@@ -145,15 +160,23 @@ public class Player : MonoBehaviour
         waiting = false;
         
     }
+
+    private void SpawnPowerup()
+    {
+        
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Powerup"))
         {
             List<Weapon> listOfSpecialWeapons = new();
             listOfSpecialWeapons.Add(sniperPrefab);
-            listOfSpecialWeapons.Add(rpgPrefab);
-            listOfSpecialWeapons.Add(smgPrefab);
+            listOfSpecialWeapons.Add(RPGPrefab);
+            listOfSpecialWeapons.Add(SMGPrefab);
+            
+
             SwapWeapon(listOfSpecialWeapons[UnityEngine.Random.Range(0, listOfSpecialWeapons.Count)]);
+            
             Destroy(collision.gameObject);
         }
     }
