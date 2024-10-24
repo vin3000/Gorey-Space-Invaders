@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        ammoBar.gameObject.SetActive(false);
         currentWeapon = Instantiate(glockPrefab, glockPrefab.transform.position, glockPrefab.transform.rotation);
         currentWeapon.transform.SetParent(transform, false);
         weaponSoundEffect.clip = glockPrefab.soundEffect.clip;
