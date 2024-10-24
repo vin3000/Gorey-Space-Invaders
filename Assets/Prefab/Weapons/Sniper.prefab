@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: 3
   bulletTransform: {fileID: 4430831779742124722}
+  soundEffect: {fileID: 496419962110376544}
   sniperBulletPrefab: {fileID: -1786484066289242039, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}
 --- !u!82 &496419962110376544
 AudioSource:

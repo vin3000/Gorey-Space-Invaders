@@ -14,11 +14,13 @@ public class Player : MonoBehaviour
     // Variabler
     float speed = 10f;
     KeyCode shootKey = KeyCode.Space;
-    public Slider ammoBar;
+    [SerializeField]
+    Slider ammoBar;
 
     //Vapen Variabler
     public Weapon glockPrefab, sniperPrefab, rpgPrefab, smgPrefab;
     Weapon currentWeapon;
+    public AudioSource weaponSoundEffect;
     bool canShoot = true;
     bool waiting = false;
 
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour
     {
         currentWeapon = Instantiate(glockPrefab, glockPrefab.transform.position, glockPrefab.transform.rotation);
         currentWeapon.transform.SetParent(transform, false);
+        weaponSoundEffect.clip = glockPrefab.soundEffect.clip;
     }
 
     // Update is called once per frame
@@ -79,29 +82,44 @@ public class Player : MonoBehaviour
     {
         if (canShoot = true && !waiting)//Kollar om coroutinen Cooldown kör med hjälp av waiting variabeln, så att vi inte startar flera cooldowns.
         {
-            if(currentWeapon.ammo <= 0)
-            {
-                Console.WriteLine("no  more bullets :(");
-                currentWeapon.removeObject();
-                SwapWeapon(glockPrefab);
-                UpdateAmmoBar();
-            }
-            AudioSource soundEffect = currentWeapon.GetComponent<AudioSource>();
-            if(soundEffect != null) {
-                soundEffect.PlayOneShot(soundEffect.clip, 0.10f);
-            }
-            //bullet = Instantiate(bulletPrefab, bulletPrefab.GameObject.Find("BulletTransform").transform.position, Quaternion.identity);
+            /* if(currentWeapon.ammo <= 0)
+             {
+                 Console.WriteLine("no  more bullets :(");
+                 ResetWeapon();
+             }
+            */ //Kanske lägg tillbaks???
             currentWeapon.SpawnProjectile();
             StartCoroutine(Cooldown(fireRate));  
             currentWeapon.ammo -= 1;
+            weaponSoundEffect.PlayOneShot(weaponSoundEffect.clip, 0.10f);
+            if (currentWeapon.ammo <= 0)
+            {
+                Console.WriteLine("no  more bullets :(");
+                ResetWeapon();
+            }
             UpdateAmmoBar();
 
         }
+    }
+    private void ResetWeapon()
+    {
+        currentWeapon.removeObject();
+        SwapWeapon(glockPrefab);
+        UpdateAmmoBar();
+        DisableAmmoBar();
     }
 
     private void UpdateAmmoBar()
     {
         ammoBar.value = ((float)currentWeapon.ammo / (float)currentWeapon.baseAmmo);
+    }
+    private void EnableAmmoBar()
+    {
+        ammoBar.gameObject.SetActive(true);
+    }
+    private void DisableAmmoBar()
+    {
+        ammoBar.gameObject.SetActive(false);
     }
 
     private void SwapWeapon(Weapon newWeapon)
@@ -109,7 +127,13 @@ public class Player : MonoBehaviour
         currentWeapon.removeObject();
         currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation);
         currentWeapon.transform.SetParent(transform, false);
-        UpdateAmmoBar();
+        weaponSoundEffect.clip = currentWeapon.soundEffect.clip;
+        if(newWeapon != glockPrefab)
+        {
+            UpdateAmmoBar();
+            EnableAmmoBar();
+        }
+        EnableAmmoBar();
     }
 
     IEnumerator Cooldown(float fireRate)

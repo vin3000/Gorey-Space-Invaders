@@ -41,8 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4297401500645310123}
   - component: {fileID: -3557190911487566518}
-  - component: {fileID: 496419962110376544}
   - component: {fileID: 5470397480272682229}
+  - component: {fileID: 496419962110376544}
   m_Layer: 0
   m_Name: RPG
   m_TagString: Untagged
@@ -118,6 +118,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5470397480272682229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7342107886190432137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f69551ed022a5488744849ee6478c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 5
+  bulletTransform: {fileID: 4430831779742124722}
+  soundEffect: {fileID: 496419962110376544}
+  rocketPrefab: {fileID: 6436592774148488623, guid: 96608dad1e1a5e143bf91dd250c227f3, type: 3}
 --- !u!82 &496419962110376544
 AudioSource:
   m_ObjectHideFlags: 0
@@ -214,18 +230,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5470397480272682229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7342107886190432137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f69551ed022a5488744849ee6478c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammo: 5
-  bulletTransform: {fileID: 4430831779742124722}
-  rocketPrefab: {fileID: 6436592774148488623, guid: 96608dad1e1a5e143bf91dd250c227f3, type: 3}

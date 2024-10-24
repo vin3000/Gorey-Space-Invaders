@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8012630495069041975}
   - component: {fileID: 6376034800815842959}
-  - component: {fileID: 3093967677060541459}
   - component: {fileID: 6281983197023319639}
+  - component: {fileID: 3093967677060541459}
   m_Layer: 7
   m_Name: SMG
   m_TagString: Untagged
@@ -87,6 +87,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6281983197023319639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3620228322870266484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be5d5b3e70a7bf46b18ac7fab7a79f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 2147483647
+  bulletTransform: {fileID: 5294835285087426574}
+  soundEffect: {fileID: 3093967677060541459}
+  bulletPrefab: {fileID: -1786484066289242039, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}
 --- !u!82 &3093967677060541459
 AudioSource:
   m_ObjectHideFlags: 0
@@ -183,21 +199,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6281983197023319639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3620228322870266484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5be5d5b3e70a7bf46b18ac7fab7a79f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammo: 2147483647
-  bulletTransform: {fileID: 5294835285087426574}
-  bulletPrefab: {fileID: -1786484066289242039, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}
 --- !u!1 &5294835285087426574
 GameObject:
   m_ObjectHideFlags: 0
