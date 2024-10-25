@@ -21,7 +21,7 @@ public class Zombies : MonoBehaviour
     private Vector3 direction = Vector3.down;
     public float damage = 10f;
     public float health = 10f;
-    
+    Animator animator;
 
     public bool isShooter = false;
     public bool isExplosive = false;
@@ -102,10 +102,10 @@ public class Zombies : MonoBehaviour
         }
         else
         {
-            
-           
 
-            Destroy(gameObject);
+            animator.Play("isdead");
+
+            Destroy(gameObject, 3);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
