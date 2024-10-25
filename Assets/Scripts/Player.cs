@@ -56,9 +56,9 @@ public class Player : MonoBehaviour
         TestWeaponUI(); 
 
         currentWeaponUI.UpdateWeaponUI(currentWeapon); //nnn 
-
         ammoBar.SetMaxAmmo((float)currentWeapon.baseAmmo);
-        ammoBar.SetAmmo(currentWeapon.ammo);  //nn 
+        ammoBar.SetAmmo(currentWeapon.ammo);
+
 
         Vector3 position = transform.position;
 
@@ -111,7 +111,6 @@ public class Player : MonoBehaviour
         {
             if (currentWeapon.ammo <= 0)
             {
-                Console.WriteLine("no  more bullets :(");
                 ResetWeapon();
             }
             currentWeapon.SpawnProjectile();
