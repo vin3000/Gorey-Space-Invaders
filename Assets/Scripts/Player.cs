@@ -68,12 +68,7 @@ public class Player : MonoBehaviour
         {
             Shoot(currentWeapon.ammo, currentWeapon.fireRate, currentWeapon.damage, currentWeapon.projectileSpeed);
         }
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            Vector3 randomPos = new Vector3(Random.Range(-14.5f, 14.5f), 14, 0);
-            print(powerupPrefab);
-            Instantiate(powerupPrefab, randomPos, Quaternion.identity);
-        }
+
         if (Application.isEditor)
         {
             if(Input.GetKeyDown(KeyCode.Alpha1))
@@ -162,10 +157,7 @@ public class Player : MonoBehaviour
         
     }
 
-    private void SpawnPowerup()
-    {
-        
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Powerup"))
