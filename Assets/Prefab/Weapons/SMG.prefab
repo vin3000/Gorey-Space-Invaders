@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be5d5b3e70a7bf46b18ac7fab7a79f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 2147483647
+  ammo: 64
   bulletTransform: {fileID: 5294835285087426574}
   soundEffect: {fileID: 3093967677060541459}
   bulletPrefab: {fileID: -1786484066289242039, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}

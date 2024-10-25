@@ -66,8 +66,8 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
-        invaders.ResetInvaders(); 
-        invaders.gameObject.SetActive(true);
+        //invaders.ResetInvaders(); 
+        //invaders.gameObject.SetActive(true);
 
         for (int i = 0; i < bunkers.Length; i++)
         {

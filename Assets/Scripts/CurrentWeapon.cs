@@ -12,6 +12,9 @@ public class CurrentWeapon : MonoBehaviour
 
     public Sprite glock;
     public Sprite sniper;
+    public Sprite rpg;
+    public Sprite smg;
+
     public Sprite tempWeapon;
     // Start is called before the first frame update
     void Start()
@@ -33,17 +36,21 @@ public class CurrentWeapon : MonoBehaviour
     public void UpdateWeaponUI(Weapon weapon)
     { 
 
-        if (weapon.name == "glock")
+        if (weapon is Glock)
         {
             currentWeaponUI.sprite = glock;  // Set Glock sprite 
         }
-        else if (weapon.name == "Sniper")
+        else if (weapon is Sniper)
         {
             currentWeaponUI.sprite = sniper;  // Set Sniper sprite
         }
-        else
+        else if (weapon is SMG)
         {
-            Debug.Log("???");
+            currentWeaponUI.sprite = smg;
+        }
+        else if (weapon is RPG)
+        {
+            currentWeaponUI.sprite = rpg;
         }
 
 

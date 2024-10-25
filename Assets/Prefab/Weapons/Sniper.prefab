@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77b9ee771461c84786a2bfc86fa5bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 5
+  ammo: 12
   bulletTransform: {fileID: 4430831779742124722}
   soundEffect: {fileID: 496419962110376544}
   sniperBulletPrefab: {fileID: -1786484066289242039, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}
