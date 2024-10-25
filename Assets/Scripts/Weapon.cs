@@ -16,10 +16,16 @@ public abstract class Weapon : MonoBehaviour
 
     public GameObject bulletTransform;
 
+    public AudioSource soundEffect;
+
     public abstract void SpawnProjectile();
     public void removeObject()
     {
         Destroy(gameObject);
+    }
+    public void Start()
+    {
+        ammo = baseAmmo;
     }
 
     //fixa sprites för alla vapen 

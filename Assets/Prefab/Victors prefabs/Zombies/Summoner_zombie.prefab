@@ -27,7 +27,7 @@ PrefabInstance:
     - target: {fileID: 2928387397767185232, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: summonPrefab
       value: 
-      objectReference: {fileID: 2751175148503560371, guid: bee2d443d85080f40899525f95d92a76, type: 3}
+      objectReference: {fileID: 5207579145221706099, guid: bee2d443d85080f40899525f95d92a76, type: 3}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.018574357
@@ -67,6 +67,10 @@ PrefabInstance:
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464358795957911870, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9949937
       objectReference: {fileID: 0}
     - target: {fileID: 7160457787257155540, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_Name

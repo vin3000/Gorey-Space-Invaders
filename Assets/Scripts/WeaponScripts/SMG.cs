@@ -1,15 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Glock : Weapon
+public class SMG : Weapon
 {
     public Bullet bulletPrefab;
-    public Glock()
+    public SMG()
     {
-        baseAmmo = int.MaxValue;
-        fireRate = 0.4f;
-        damage = 5;
-        projectileSpeed = 10f;
+        baseAmmo = 64;
+        fireRate = 0.15f;
+        damage = 2.5f;
+        projectileSpeed = 15f;
     }
 
     public override void SpawnProjectile()

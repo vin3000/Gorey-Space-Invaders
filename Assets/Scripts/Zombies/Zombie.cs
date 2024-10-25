@@ -126,12 +126,13 @@ public class Zombies : MonoBehaviour
             health -= collision.gameObject.GetComponent<Explosion>().explosionDamage;
            // lägg till en explosion damage variabel på explosion grejen
         }
-        else if ((collision.gameObject.layer == LayerMask.NameToLayer("Boundary"))||(collision.gameObject.layer==LayerMask.NameToLayer("player"))) //nï¿½tt nedre kanten
+        else if ((collision.gameObject.layer == LayerMask.NameToLayer("Boundary"))||(collision.gameObject.layer==LayerMask.NameToLayer("Player"))) //nï¿½tt nedre kanten
         {
+            print(collision.gameObject);
             GameObject Player = GameObject.Find("Player");
             Player.GetComponent<Health>().currentHealth -= damage; //make it so that it kills a bit of health
             GameManager.Instance.OnBoundaryReached(); //hï¿½r letar game manager efter invaders, nï¿½r koden hï¿½r har blivit individ baserad. MAY OR MAY NOT BE USELESS. I think this is the "damage player if edge" thing
-
+            
         }
     }
 }

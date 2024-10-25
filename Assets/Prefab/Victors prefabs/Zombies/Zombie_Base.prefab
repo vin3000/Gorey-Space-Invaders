@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 83f6e88e27a4733438b2804d5f1dc2c0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -181,7 +181,6 @@ MonoBehaviour:
   isInfested: 0
   missilePrefab: {fileID: 0}
   summonPrefab: {fileID: 7260386340399911414, guid: 58da98eedf9715142b7f266e15e5f6f8, type: 3}
-  turnBack: {fileID: 2130136417138234140}
 --- !u!111 &2130136417138234140
 Animation:
   m_ObjectHideFlags: 0

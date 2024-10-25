@@ -130,8 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77b9ee771461c84786a2bfc86fa5bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 3
+  ammo: 5
   bulletTransform: {fileID: 4430831779742124722}
+  soundEffect: {fileID: 496419962110376544}
   sniperBulletPrefab: {fileID: -1786484066289242039, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}
 --- !u!82 &496419962110376544
 AudioSource:
@@ -145,7 +146,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4f94426a87c1e544a82ac4ba33daf870, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

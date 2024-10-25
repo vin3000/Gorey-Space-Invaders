@@ -7,8 +7,7 @@ public class Sniper : Weapon
     public Bullet sniperBulletPrefab;
     public Sniper()
     {
-        baseAmmo = 3;
-        ammo = baseAmmo;
+        baseAmmo = 5;
         fireRate = 3f;
         damage = 50;
         projectileSpeed = 30f;
