@@ -19,6 +19,7 @@ public class WaveCenter : MonoBehaviour
      * framkallar specifik mängd av waves (eller framkallar x wave svårighet varje y sekunder tills timer är slut)
      * framkalla bossar var 5 wave
      * framkalla många bossar sista wave
+     * boss bara skadas av explosion (checka endast efter eplosion damage)
      * 
      * Variabler;
      * wave number
@@ -26,13 +27,17 @@ public class WaveCenter : MonoBehaviour
      * special spawns (lista)
      * storlek baserad på svårighet/prefab lista??
      * 
-     * antal spawns/timer
+     * antal spawns!
      * 
      */
     
     private Vector3 initialPosition;
-    public int row;
-    public int col;
+
+    private int row;
+    private int col;
+    public int[] rowRange = new int[2]; //smallest, largest
+    public int[] colRange = new int[2];
+
     public int difficulty; //0->3
     /* 0 - easy, 1-5
      * 1 - medium, 6-10
@@ -48,6 +53,9 @@ public class WaveCenter : MonoBehaviour
     
     void Awake() //en speciel zombie per wave
     {
+        row = UnityEngine.Random.Range(rowRange[1] - 1, rowRange[2]);
+        col = UnityEngine.Random.Range(colRange[1] - 1, colRange[2]);
+
         int a = UnityEngine.Random.Range(0, difficulty + 1);
         Debug.Log(a);
         specZombiePrefab = specZombiePrefabs[a];
