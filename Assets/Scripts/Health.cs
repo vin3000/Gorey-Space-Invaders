@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
-using UnityEngine;
+using UnityEngine; 
 
 public class Health : MonoBehaviour
 {
@@ -15,10 +15,11 @@ public class Health : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Missile")) 
         {
             //GameManager.Instance.OnInvaderKilled(this); 
-            //minska health med damage av laser
+            //minska health med damage av missile
             currentHealth -= collision.gameObject.GetComponent<Missile>().damage;
         }
-    }
+    } 
+
 
 
     public HealthBar healthBar; 
@@ -28,7 +29,8 @@ public class Health : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        healthBar.SetMaxHealth(maxHealth); 
+        healthBar.SetMaxHealth(maxHealth);
+
     }
 
 
@@ -55,9 +57,10 @@ public class Health : MonoBehaviour
         } //Gör att spelaren tar damage när man trycker på A 
 
 
-        healthBar.SetHealth(currentHealth); 
+        healthBar.SetHealth(currentHealth);
+
         //Uppdaterar healthbar UI 
-    } 
+    }
 
     void Heal() {
 

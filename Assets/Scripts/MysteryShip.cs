@@ -12,7 +12,7 @@ public class MysteryShip : MonoBehaviour
     Vector2 leftDestination;
     Vector2 rightDestination;
     int direction = -1;
-    bool isVisible;
+    bool isVisible; 
 
     
     void Start()

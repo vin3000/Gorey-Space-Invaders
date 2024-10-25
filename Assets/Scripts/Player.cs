@@ -13,6 +13,11 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
+    public AmmoBar ammoBar; //dijisj
+    public CurrentWeapon currentWeaponUI; //nnn reffererar till CurrentWeapon 
+
+
+
     // Variabler
     float speed = 10f;
     KeyCode shootKey = KeyCode.Space;
@@ -25,17 +30,29 @@ public class Player : MonoBehaviour
     public AudioSource weaponSoundEffect;
     bool canShoot = true;
     bool waiting = false;
+    //float maxAmmoTemp = 10f;
 
 
-
-    /* What each weapon needs (skapa prefabs som ärver)
+    /* What each weapon needs (skapa prefabs som ï¿½rver)
      * Damage
      * Rate of fire
-     * Max ammo
+     * Max ammo 
     */
 
-    private void Start()
+    public void TestWeaponUI()  
     {
+        
+    }
+
+    private void Start()
+    { 
+        ammoBar.SetMaxAmmo(currentWeapon.baseAmmo); //nn 
+
+        currentWeapon = Instantiate(glockPrefab, glockPrefab.transform.position, glockPrefab.transform.rotation, transform);
+
+        currentWeaponUI.UpdateWeaponUI(currentWeapon);//nnn 
+
+
         ammoBar.gameObject.SetActive(false);
         currentWeapon = Instantiate(glockPrefab, glockPrefab.transform.position, glockPrefab.transform.rotation);
         currentWeapon.transform.SetParent(transform, false);
@@ -45,6 +62,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TestWeaponUI(); 
+
+        currentWeaponUI.UpdateWeaponUI(currentWeapon); //nnn 
+
+        // ammoBar.SetAmmo(currentWeapon.ammo);  //nn 
+        // ammoBar.SetAmmo(); //n 
+
         Vector3 position = transform.position;
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -68,12 +92,7 @@ public class Player : MonoBehaviour
         {
             Shoot(currentWeapon.ammo, currentWeapon.fireRate, currentWeapon.damage, currentWeapon.projectileSpeed);
         }
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            Vector3 randomPos = new Vector3(Random.Range(-14.5f, 14.5f), 14, 0);
-            print(powerupPrefab);
-            Instantiate(powerupPrefab, randomPos, Quaternion.identity);
-        }
+
         if (Application.isEditor)
         {
             if(Input.GetKeyDown(KeyCode.Alpha1))
@@ -96,14 +115,14 @@ public class Player : MonoBehaviour
     }
     private void Shoot(int ammo, float fireRate, float damage, float projectileSpeed)
     {
-        if (canShoot = true && !waiting)//Kollar om coroutinen Cooldown kör med hjälp av waiting variabeln, så att vi inte startar flera cooldowns.
+        if (canShoot = true && !waiting)//Kollar om coroutinen Cooldown kï¿½r med hjï¿½lp av waiting variabeln, sï¿½ att vi inte startar flera cooldowns.
         {
             /* if(currentWeapon.ammo <= 0)
              {
                  Console.WriteLine("no  more bullets :(");
                  ResetWeapon();
              }
-            */ //Kanske lägg tillbaks???
+            */ //Kanske lï¿½gg tillbaks???
             currentWeapon.SpawnProjectile();
             StartCoroutine(Cooldown(fireRate));  
             currentWeapon.ammo -= 1;
@@ -140,6 +159,18 @@ public class Player : MonoBehaviour
 
     private void SwapWeapon(Weapon newWeapon)
     {
+        currentWeapon.removeObject(); 
+        print(currentWeapon);
+        currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation, transform); 
+
+        ammoBar.SetMaxAmmo(currentWeapon.ammo); //nnn
+
+        currentWeaponUI.UpdateWeaponUI(currentWeapon);
+        Debug.Log("Weapon Swapped: " + currentWeapon.name); 
+        //resna ut det som inte behovs
+
+
+
         currentWeapon.removeObject();
         currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation);
         currentWeapon.transform.SetParent(transform, false);
@@ -162,10 +193,7 @@ public class Player : MonoBehaviour
         
     }
 
-    private void SpawnPowerup()
-    {
-        
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Powerup"))
