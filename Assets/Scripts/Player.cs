@@ -2,40 +2,72 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEngine;
+using UnityEngine; 
 
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
+    public AmmoBar ammoBar; //dijisj
+    public CurrentWeapon currentWeaponUI; //nnn reffererar till CurrentWeapon 
+
+
+
     // Variabler
     public Bullet bulletPrefab;
     private Bullet bullet;
     float speed = 10f;
+   
 
     //Vapen Variabler
     public Weapon glockPrefab, sniperPrefab;
     Weapon currentWeapon;
     bool canShoot = true;
     bool waiting = false;
-
+    //float maxAmmoTemp = 10f;
 
 
     /* What each weapon needs (skapa prefabs som ärver)
      * Damage
      * Rate of fire
-     * Max ammo
+     * Max ammo 
     */
 
-    private void Start()
+    public void TestWeaponUI()  
     {
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            SwapWeapon(glockPrefab);  // Swap to Glock
+        }
+
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            SwapWeapon(sniperPrefab);  // Swap to Sniper
+        }
+    }
+
+    private void Start()
+    { 
+        ammoBar.SetMaxAmmo(currentWeapon.baseAmmo); //nn 
+
         currentWeapon = Instantiate(glockPrefab, glockPrefab.transform.position, glockPrefab.transform.rotation, transform);
+
+        currentWeaponUI.UpdateWeaponUI(currentWeapon);//nnn 
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        TestWeaponUI(); 
+
+        currentWeaponUI.UpdateWeaponUI(currentWeapon); //nnn 
+
+        // ammoBar.SetAmmo(currentWeapon.ammo);  //nn 
+        // ammoBar.SetAmmo(); //n 
+
         Vector3 position = transform.position;
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -90,9 +122,17 @@ public class Player : MonoBehaviour
 
     private void SwapWeapon(Weapon newWeapon)
     {
-        currentWeapon.removeObject();
+        currentWeapon.removeObject(); 
         print(currentWeapon);
-        currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation, transform);
+        currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation, transform); 
+
+        ammoBar.SetMaxAmmo(currentWeapon.ammo); //nnn
+
+        currentWeaponUI.UpdateWeaponUI(currentWeapon);
+        Debug.Log("Weapon Swapped: " + currentWeapon.name); 
+
+
+
     }
 
     IEnumerator Cooldown(float fireRate)
