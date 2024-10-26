@@ -53,8 +53,10 @@ public class WaveCenter : MonoBehaviour
     
     void Awake() //en speciel zombie per wave
     {
-        row = UnityEngine.Random.Range(rowRange[1] - 1, rowRange[2]);
-        col = UnityEngine.Random.Range(colRange[1] - 1, colRange[2]);
+        row = UnityEngine.Random.Range(rowRange[0], rowRange[1]+1);
+        col = UnityEngine.Random.Range(colRange[0], colRange[1]+1);
+        print($"row = {row}");
+        print($"col = {col}");
 
         int a = UnityEngine.Random.Range(0, difficulty + 1);
         Debug.Log(a);
@@ -119,7 +121,8 @@ public class WaveCenter : MonoBehaviour
         int position;
         if (a == 1 || a == 2)
         {
-            position = 0;
+            position = 1;
+            print("to small :)");
         }
         else
         {

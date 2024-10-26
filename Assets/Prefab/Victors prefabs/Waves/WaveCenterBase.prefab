@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rowRange: 0000000000000000
   colRange: 0000000000000000
-  difficulty: 0
+  difficulty: 1
   mainZombiePrefab: {fileID: 4707826000537443506, guid: 58da98eedf9715142b7f266e15e5f6f8, type: 3}
   hasSpecial: 1
   specZombiePrefabs:
