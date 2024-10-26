@@ -2791,8 +2791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b338227d69cc4584bb9511e330cffd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  row: 8
-  col: 8
+  rowRange: 0000000000000000
+  colRange: 0000000000000000
   difficulty: 0
   mainZombiePrefab: {fileID: 4707826000537443506, guid: 58da98eedf9715142b7f266e15e5f6f8, type: 3}
   hasSpecial: 0
@@ -4294,6 +4294,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4471598446192314699, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471598446192314699, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471598446192314699, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5741752830845653233, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4304,7 +4316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5840519902649350879, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 5840519902649350879, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4374,6 +4386,10 @@ PrefabInstance:
     - {fileID: 6796280753426447899, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
     - {fileID: 3829946533884428615, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
     - {fileID: 7069638223346624881, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+    - {fileID: 8284572477343650267, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+    - {fileID: 323619546863963460, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+    - {fileID: 9124967022201674108, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+    - {fileID: 2330244832229535332, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5741752830845653233, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
