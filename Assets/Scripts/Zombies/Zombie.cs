@@ -35,7 +35,7 @@ public class Zombies : MonoBehaviour
     //public aniamtionspeed;
     public void Start()
     {
-        //anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         
         if (isShooter)
         {
@@ -103,9 +103,10 @@ public class Zombies : MonoBehaviour
         else
         {
 
-            animator.Play("isdead");
+           
 
             Destroy(gameObject, 3);
+            animator.Play("isdead");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
