@@ -21,7 +21,6 @@ public class Zombies : MonoBehaviour
     private Vector3 direction = Vector3.down;
     public float damage = 10f;
     public float health = 10f;
-    Animator animator;
 
     public bool isShooter = false;
     public bool isExplosive = false;
@@ -31,12 +30,22 @@ public class Zombies : MonoBehaviour
 
     public Missile missilePrefab;
     public GameObject summonPrefab;
-    //Animator anim;
-    //public aniamtionspeed;
+    public Explosion explosionParticle;
+    private ParticleSystem explosionPartSys;
+    public ParticleSystem bloodParticle;
+    Vector2 scaleOfObject; //used to change size of blood particle
+
+
+    Animator animator;
+    bool isDead; //turns true when it dies, to trigger animation
+    float deadAnimTime = 3f;
+    //public walkAnimSpeed;
     public void Start()
     {
-        //anim = GetComponent<Animator>();
-        
+        Vector2 scaleOfObject = transform.lossyScale;
+        animator = GetComponentInChildren<Animator>();
+        explosionPartSys = explosionParticle.GetComponent<ParticleSystem>();
+
         if (isShooter)
         {
             InvokeRepeating(nameof(MissileAttack), 1, 1);
@@ -49,7 +58,7 @@ public class Zombies : MonoBehaviour
     void MissileAttack()
     {
         float rand = UnityEngine.Random.value;
-        if (rand < 0.5)
+        if (rand < 0.5 && !isDead)
         {
             Missile shotMissile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
             shotMissile.GetComponent<Missile>().damage = damage;
@@ -59,26 +68,28 @@ public class Zombies : MonoBehaviour
     {
 
         float rand = UnityEngine.Random.value;
-        if (rand < 0.2)
+        if (isInfested)
+        {
+            GameObject summon = Instantiate(summonPrefab, new Vector3(transform.position.x - 1, transform.position.y, 0), Quaternion.identity);
+            GameObject summon2 = Instantiate(summonPrefab, new Vector3(transform.position.x + 1, transform.position.y, 0), Quaternion.identity);
+            summon.GetComponent<Zombies>().speed = speed + 2f;
+            summon2.GetComponent<Zombies>().speed = speed + 2f;
+        }
+        else if (rand < 0.3 && !isDead)
         {
             //kolla fï¿½r ett snyggare sï¿½tt att gï¿½ra detta
             GameObject summon = Instantiate(summonPrefab, new Vector3(transform.position.x-1,transform.position.y,0), Quaternion.identity);
             GameObject summon2 = Instantiate(summonPrefab, new Vector3(transform.position.x + 1, transform.position.y, 0), Quaternion.identity);
             summon.GetComponent<Zombies>().speed = speed + 2f;
             summon2.GetComponent<Zombies>().speed = speed + 2f;
-            if (isInfested)
-            {
-                Destroy(gameObject);
-            }
         }
     }
 
     private void Update()
     {
-        Move();
-        if (health <= 0 || health == 0)
+        if (!isDead)
         {
-            Die();
+            Move();
         }
     }
 
@@ -86,27 +97,38 @@ public class Zombies : MonoBehaviour
     {
         transform.position += speed * Time.deltaTime * direction;
     }
+    void CheckHealth()
+    {
+        if (health <= 0 || health == 0)
+        {
+            Die();
+        }
+    }
     void Die()
     {
+        if(transform.parent != null)
+        {
+            transform.parent = null;
+        }
+        BoxCollider2D bCol = GetComponent<BoxCollider2D>();
+        bCol.enabled = !bCol.enabled;
 
         //kalla partiklar
         if (isExplosive)
         {
-            //kalla explosion
-            //temporary
-            Destroy(gameObject);
+            Explosion explosion = Instantiate(explosionParticle, transform.position, Quaternion.identity);
+            explosion.explosionDamage = damage;
+            explosion.soundEffect.PlayOneShot(explosion.soundEffect.clip, 0.05f);
+            Destroy(explosion, explosionPartSys.main.duration);
         }
         if (isInfested)
         {
             SummoningZombies(); //gï¿½r sï¿½ summon skript kollar hur mï¿½nga som ska summonas
         }
-        else
-        {
-
-            animator.Play("isdead");
-
-            Destroy(gameObject, 3);
-        }
+        isDead = true;
+        animator.SetBool("isDead", isDead);
+        Destroy(gameObject, deadAnimTime);
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -115,16 +137,21 @@ public class Zombies : MonoBehaviour
             if (collision.gameObject.GetComponent<Bullet>())
             {
                 health -= collision.gameObject.GetComponent<Bullet>().damage;
+                CheckHealth();
+                ParticleSystem blood = Instantiate(bloodParticle, transform.position, Quaternion.identity);
+                Destroy(blood, 1f);
             }
             if (collision.gameObject.GetComponent<Rocket>()) 
             {
                 health -= collision.gameObject.GetComponent<Rocket>().damage;
+                CheckHealth();
             }
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
             health -= collision.gameObject.GetComponent<Explosion>().explosionDamage;
-           // lägg till en explosion damage variabel på explosion grejen
+            CheckHealth();
+            // lägg till en explosion damage variabel på explosion grejen
         }
         else if ((collision.gameObject.layer == LayerMask.NameToLayer("Boundary"))||(collision.gameObject.layer==LayerMask.NameToLayer("Player"))) //nï¿½tt nedre kanten
         {
@@ -132,7 +159,6 @@ public class Zombies : MonoBehaviour
             GameObject Player = GameObject.Find("Player");
             Player.GetComponent<Health>().currentHealth -= damage; //make it so that it kills a bit of health
             GameManager.Instance.OnBoundaryReached(); //hï¿½r letar game manager efter invaders, nï¿½r koden hï¿½r har blivit individ baserad. MAY OR MAY NOT BE USELESS. I think this is the "damage player if edge" thing
-            
         }
     }
 }

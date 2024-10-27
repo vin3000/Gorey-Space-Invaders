@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7635349726548008930
+--- !u!1001 &7526104464265985041
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -31,11 +31,15 @@ PrefabInstance:
     - target: {fileID: 2928387397767185232, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: summonPrefab
       value: 
-      objectReference: {fileID: 768207283055325238}
+      objectReference: {fileID: 805324415077864389}
     - target: {fileID: 2928387397767185232, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: missilePrefab
       value: 
       objectReference: {fileID: 6237745307908444816, guid: 5469e6c785da15841b47da9bf6a5a0a8, type: 3}
+    - target: {fileID: 2928387397767185232, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: explosionParticle
+      value: 
+      objectReference: {fileID: 1215711696759413813, guid: ef84ca2451ce54444b1c1e14c88d59f6, type: 3}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -50,11 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -13.013424
       objectReference: {fileID: 0}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.107571
       objectReference: {fileID: 0}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalPosition.z
@@ -92,21 +96,9 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5464358795957911870, guid: c31ee225578743042813b05530a64131, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464358795957911870, guid: c31ee225578743042813b05530a64131, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464358795957911870, guid: c31ee225578743042813b05530a64131, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7160457787257155540, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_Name
-      value: Critter_zombie
+      value: FatZomberkTEst
       objectReference: {fileID: 0}
     - target: {fileID: 8903141782310727097, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_Size.x
@@ -121,8 +113,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c31ee225578743042813b05530a64131, type: 3}
---- !u!1 &768207283055325238 stripped
+--- !u!1 &805324415077864389 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7160457787257155540, guid: c31ee225578743042813b05530a64131, type: 3}
-  m_PrefabInstance: {fileID: 7635349726548008930}
+  m_PrefabInstance: {fileID: 7526104464265985041}
   m_PrefabAsset: {fileID: 0}

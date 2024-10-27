@@ -8,17 +8,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1938000193845131646, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938000193845131646, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: m_Color.g
+      value: 0.585819
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938000193845131646, guid: c31ee225578743042813b05530a64131, type: 3}
+      propertyPath: m_Color.r
+      value: 0.485938
+      objectReference: {fileID: 0}
     - target: {fileID: 2928387397767185232, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2928387397767185232, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: damage
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2928387397767185232, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: health
-      value: 1
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2928387397767185232, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: isShooter
@@ -38,15 +50,15 @@ PrefabInstance:
       objectReference: {fileID: 6237745307908444816, guid: 5469e6c785da15841b47da9bf6a5a0a8, type: 3}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.75
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4602479813211602286, guid: c31ee225578743042813b05530a64131, type: 3}
       propertyPath: m_LocalPosition.z
