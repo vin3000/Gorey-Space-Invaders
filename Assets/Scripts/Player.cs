@@ -13,8 +13,8 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
-    public AmmoBar ammoBar; //dijisj
-    public CurrentWeapon currentWeaponUI; //nnn reffererar till CurrentWeapon 
+    public AmmoBar ammoBar; 
+    public CurrentWeapon currentWeaponUI;
 
 
 
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public Powerup powerupPrefab;
     Weapon currentWeapon;
     public AudioSource weaponSoundEffect;
+    public AudioSource emptyAmmo;
     bool canShoot = true;
     bool waiting = false;
     //float maxAmmoTemp = 10f;
@@ -113,6 +114,7 @@ public class Player : MonoBehaviour
             if (currentWeapon.ammo <= 0)
             {
                 ResetWeapon();
+                emptyAmmo.PlayOneShot(emptyAmmo.clip, 0.3f);
             }
             currentWeapon.SpawnProjectile();
             screenShake.Shake(2f, 10f);
@@ -141,7 +143,7 @@ public class Player : MonoBehaviour
         if(currentWeapon != null)
         {
             currentWeapon.removeObject();
-        } 
+        }
         currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation, transform); 
 
         ammoBar.SetMaxAmmo(currentWeapon.ammo); //nnn

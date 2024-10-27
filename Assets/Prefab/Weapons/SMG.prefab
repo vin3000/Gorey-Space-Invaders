@@ -27,13 +27,13 @@ Transform:
   m_GameObject: {fileID: 3620228322870266484}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.057, y: 0.056, z: 0}
-  m_LocalScale: {x: 0.05780902, y: 0.05780902, z: 0.019269675}
+  m_LocalPosition: {x: 0.0863, y: 0.0046, z: 0}
+  m_LocalScale: {x: 0.046057027, y: 0.046057027, z: 0.015352343}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4124906959339563057}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6376034800815842959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,6 @@ MonoBehaviour:
   ammo: 64
   bulletTransform: {fileID: 5294835285087426574}
   soundEffect: {fileID: 8300000, guid: 530b42f5161707341bae61ee27c9860f, type: 3}
-  screenShake: {fileID: 2474382293803268557, guid: ccc787d2fd2b7554daf67f5b783476fd, type: 3}
   bulletPrefab: {fileID: -1786484066289242039, guid: f6ee2607d2949ec49801f39c823067ae, type: 3}
 --- !u!1 &5294835285087426574
 GameObject:
@@ -128,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 5294835285087426574}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.333, y: -1.01, z: 0}
+  m_LocalPosition: {x: 1.783, y: -0.449, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

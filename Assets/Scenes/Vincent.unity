@@ -506,9 +506,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6664758593830809190, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5741752830845653233, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840519902649350879, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 11.021209
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840519902649350879, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 11.021209
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840519902649350879, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 11.021209
       objectReference: {fileID: 0}
     - target: {fileID: 5840519902649350879, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -555,7 +571,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1057433089}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 478870829380074665, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
+    - {fileID: 1673897129837119088, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5840519902649350879, guid: 1b09632a3dfd1fe4e8e1ece442199da2, type: 3}
       insertIndex: -1

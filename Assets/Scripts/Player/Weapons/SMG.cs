@@ -5,6 +5,7 @@ using UnityEngine;
 public class SMG : Weapon
 {
     public Bullet bulletPrefab;
+
     public SMG()
     {
         baseAmmo = 64;

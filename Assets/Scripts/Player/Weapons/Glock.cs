@@ -1,9 +1,9 @@
 using UnityEngine;
 
-
 public class Glock : Weapon
 {
     public Bullet bulletPrefab;
+
     public Glock()
     {
         baseAmmo = int.MaxValue;
