@@ -18,6 +18,7 @@ public abstract class Weapon : MonoBehaviour
 
     public AudioClip soundEffect;
 
+
     public abstract void SpawnProjectile();
     public void removeObject()
     {

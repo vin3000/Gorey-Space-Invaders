@@ -14,7 +14,6 @@ public class Explosion : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Invader"))
         {
             Destroy(gameObject.GetComponent<CircleCollider2D>());
-            StartCoroutine(screenshake.Shake(0.5f, 0.20f));
         }
     }
 }

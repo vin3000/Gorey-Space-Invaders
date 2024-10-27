@@ -9,11 +9,13 @@ public class Rocket : Projectile
 {
     public float damage;
     public float explosionDamage;
-    public Explosion explosionParticle;
+    [SerializeField] private Explosion explosionParticle;
     private ParticleSystem explosionPartSys;
+    private CameraShake shaker;
 
     private void Awake()
     {
+        shaker = Camera.main.GetComponentInParent<CameraShake>();
         direction = Vector3.up;
         explosionPartSys = explosionParticle.GetComponent<ParticleSystem>();
     }
@@ -45,6 +47,7 @@ public class Rocket : Projectile
             explosion.explosionDamage = explosionDamage;
             explosion.soundEffect.PlayOneShot(explosion.soundEffect.clip, 0.05f);
             Destroy(explosion, explosionPartSys.main.duration);
+            shaker.StartCoroutine(shaker.Shake(0.5f, 2f));
         }
     }
 }

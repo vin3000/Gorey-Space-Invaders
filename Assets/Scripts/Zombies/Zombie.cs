@@ -24,6 +24,8 @@ public class Zombies : MonoBehaviour
     public bool isExplosive = false;
     public bool isSummoner = false;
     public bool isInfested = false;
+    private CameraShake shaker;
+    private Freezeframe freezer;
     //public bool isProtector = false;
 
     public Missile missilePrefab;
@@ -45,6 +47,8 @@ public class Zombies : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         bloodPartSys = bloodParticle.GetComponent<ParticleSystem>();
         explosionPartSys = explosionParticle.GetComponent<ParticleSystem>();
+        shaker = Camera.main.GetComponentInParent<CameraShake>();
+        freezer = Camera.main.GetComponentInParent<Freezeframe>();
 
         if (isShooter)
         {
@@ -110,6 +114,7 @@ public class Zombies : MonoBehaviour
         {
             transform.parent = null;
         }
+        freezer.freeze(0.2f);
         BoxCollider2D bCol = GetComponent<BoxCollider2D>();
         bCol.enabled = !bCol.enabled;
 
@@ -130,6 +135,14 @@ public class Zombies : MonoBehaviour
         Destroy(gameObject, deadAnimTime);
         
     }
+
+  /*  IEnumerator shakeNFreeze()
+    {
+        freezer.freeze(0.1f);
+        yield return new WaitForSeconds(0.1f);
+        shaker.StartCoroutine(shaker.Shake(0.2f, 3f));
+    }
+  */ //kanske lägg tillbkas
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Laser")) //layer name change to bullet?
@@ -162,6 +175,7 @@ public class Zombies : MonoBehaviour
         }
     }
 }
+
 
 
 //skapa subklasser av zombier. Varje klass ska innehï¿½lla zombiens actions. Som Invader skripten.

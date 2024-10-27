@@ -122,8 +122,6 @@ public class GameManager : MonoBehaviour
     public void OnMysteryShipKilled(MysteryShip mysteryShip, Vector2 deathPos) 
     {
         mysteryShip.gameObject.SetActive(false); //for a time. maybe kill and summon new one, even though player doesnt kill it.
-
-        Debug.Log(mysteryShip.transform.position);
         SpawnPowerup(mysteryShip.transform.position);
     }
     public void SpawnPowerup(Vector2 position)

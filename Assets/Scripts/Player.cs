@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     // Variabler
     float speed = 10f;
     KeyCode shootKey = KeyCode.Space;
-    public Freezeframe freezeFrame;
     public CameraShake screenShake;
 
     //Vapen Variabler
@@ -138,6 +137,11 @@ public class Player : MonoBehaviour
     private void ResetWeapon()
     {
         SwapWeapon(glockPrefab);
+    }
+
+    public void ShakeScreen(float time, float amplitude)
+    {
+        StartCoroutine(screenShake.Shake(time, amplitude));
     }
 
     private void SwapWeapon(Weapon newWeapon)
