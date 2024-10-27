@@ -119,15 +119,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OnMysteryShipKilled(MysteryShip mysteryShip) 
+    public void OnMysteryShipKilled(MysteryShip mysteryShip, Vector2 deathPos) 
     {
         mysteryShip.gameObject.SetActive(false); //for a time. maybe kill and summon new one, even though player doesnt kill it.
 
+        Debug.Log(mysteryShip.transform.position);
         SpawnPowerup(mysteryShip.transform.position);
     }
-    public void SpawnPowerup(Vector3 position)
+    public void SpawnPowerup(Vector2 position)
     {
-        Debug.Log(position);
         Instantiate(powerupPrefab, position, Quaternion.identity);
     }
     public void OnBoundaryReached() //change so that player looses health or something

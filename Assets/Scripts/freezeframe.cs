@@ -18,8 +18,9 @@ public class Freezeframe : MonoBehaviour
         }
     }
    
-    public void freeze() 
+    public void freeze(float duration) 
     {
+        Duration = duration;
         _pendingFreezeduration = Duration;
     }
     IEnumerator Dofreeze()

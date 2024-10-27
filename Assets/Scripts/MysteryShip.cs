@@ -86,8 +86,9 @@ public class MysteryShip : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Laser"))
         {
+            GameManager.Instance.OnMysteryShipKilled(this, this.transform.position);
             SetInvisible();
-            GameManager.Instance.OnMysteryShipKilled(this);
+            
         }
 
         
