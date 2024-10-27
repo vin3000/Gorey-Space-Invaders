@@ -32,6 +32,8 @@ public class Rocket : Projectile
         CheckCollision(collision);
     }
 
+
+
     void CheckCollision(Collider2D collision)
     {
         Bunker bunker = collision.gameObject.GetComponent<Bunker>();

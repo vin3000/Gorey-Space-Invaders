@@ -6,12 +6,12 @@ using UnityEngine;
 public class RPG : Weapon
 {
     public Rocket rocketPrefab;
-    private float explosionDamage = 50f; //ändra senare
+    private float explosionDamage = 50f;
     public RPG()
     {
         baseAmmo = 3;
-        fireRate = 2.5f; //ändra tillbaka, bara för testing
-        damage = 40; //ändra senare
+        fireRate = 2.5f;
+        damage = 40;
         projectileSpeed = 20f;
     }
 

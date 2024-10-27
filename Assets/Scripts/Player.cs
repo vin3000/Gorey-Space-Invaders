@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using Unity.VisualScripting;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -13,8 +14,8 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
-    public AmmoBar ammoBar; 
-    public CurrentWeapon currentWeaponUI;
+    [SerializeField] private AmmoBar ammoBar; 
+    [SerializeField] private CurrentWeapon currentWeaponUI;
 
 
 
@@ -25,11 +26,11 @@ public class Player : MonoBehaviour
     public CameraShake screenShake;
 
     //Vapen Variabler
-    public Weapon glockPrefab, sniperPrefab, RPGPrefab, SMGPrefab;
+    [SerializeField] private Weapon glockPrefab, sniperPrefab, RPGPrefab, SMGPrefab;
     public Powerup powerupPrefab;
     Weapon currentWeapon;
-    public AudioSource weaponSoundEffect;
-    public AudioSource emptyAmmo;
+    [SerializeField] private AudioSource weaponSoundEffect;
+    [SerializeField] private AudioSource emptyAmmo;
     bool canShoot = true;
     bool waiting = false;
     //float maxAmmoTemp = 10f;
@@ -117,7 +118,7 @@ public class Player : MonoBehaviour
                 emptyAmmo.PlayOneShot(emptyAmmo.clip, 0.3f);
             }
             currentWeapon.SpawnProjectile();
-            screenShake.Shake(2f, 10f);
+            StartCoroutine(screenShake.Shake(0.25f, 0.10f));
             StartCoroutine(Cooldown(fireRate));  
             currentWeapon.ammo -= 1;
             if(currentWeapon is RPG)
@@ -133,6 +134,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+
     private void ResetWeapon()
     {
         SwapWeapon(glockPrefab);
