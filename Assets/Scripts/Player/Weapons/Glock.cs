@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Glock : Weapon
 {
-    public Bullet bulletPrefab;
+    [SerializeField] private Bullet bulletPrefab;
 
     public Glock()
     {

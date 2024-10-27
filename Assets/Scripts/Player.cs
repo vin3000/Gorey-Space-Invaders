@@ -22,7 +22,8 @@ public class Player : MonoBehaviour
     // Variabler
     float speed = 10f;
     KeyCode shootKey = KeyCode.Space;
-    public CameraShake screenShake;
+    [SerializeField] private CameraShake screenShake;
+    
 
     //Vapen Variabler
     [SerializeField] private Weapon glockPrefab, sniperPrefab, RPGPrefab, SMGPrefab;
@@ -32,15 +33,6 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioSource emptyAmmo;
     bool canShoot = true;
     bool waiting = false;
-    //float maxAmmoTemp = 10f;
-
-
-    /* What each weapon needs (skapa prefabs som �rver)
-     * Damage
-     * Rate of fire
-     * Max ammo 
-    */
-
     public void TestWeaponUI()  
     {
         
@@ -59,8 +51,8 @@ public class Player : MonoBehaviour
         TestWeaponUI(); 
 
         currentWeaponUI.UpdateWeaponUI(currentWeapon); //nnn 
-        ammoBar.SetMaxAmmo((float)currentWeapon.baseAmmo);
-        ammoBar.SetAmmo(currentWeapon.ammo);
+        ammoBar.SetMaxAmmo((float)currentWeapon.baseAmmo); //nnn
+        ammoBar.SetAmmo(currentWeapon.ammo); // nnn
 
 
         Vector3 position = transform.position;
@@ -109,7 +101,7 @@ public class Player : MonoBehaviour
     }
     private void Shoot(int ammo, float fireRate, float damage, float projectileSpeed)
     {
-        if (canShoot = true && !waiting)//Kollar om coroutinen Cooldown k�r med hj�lp av waiting variabeln, s� att vi inte startar flera cooldowns.
+        if (canShoot = true && !waiting)//Kollar om coroutinen Cooldown kör med hjälp av waiting variabeln, s� att vi inte startar flera cooldowns.
         {
             if (currentWeapon.ammo <= 0)
             {

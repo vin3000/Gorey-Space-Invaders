@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sniper : Weapon
 {
-    public Bullet sniperBulletPrefab;
+    [SerializeField] private Bullet sniperBulletPrefab;
     public Sniper()
     {
         baseAmmo = 5;

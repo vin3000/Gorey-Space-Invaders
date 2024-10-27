@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SMG : Weapon
 {
-    public Bullet bulletPrefab;
+    [SerializeField] private Bullet bulletPrefab;
 
     public SMG()
     {

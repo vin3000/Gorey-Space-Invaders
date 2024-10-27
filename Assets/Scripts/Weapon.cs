@@ -14,7 +14,7 @@ public abstract class Weapon : MonoBehaviour
 
     public float projectileSpeed { get; protected set; }
 
-    public GameObject bulletTransform;
+    [SerializeField] protected GameObject bulletTransform;
 
     public AudioClip soundEffect;
 

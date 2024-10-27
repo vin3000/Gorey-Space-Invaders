@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RPG : Weapon
 {
-    public Rocket rocketPrefab;
+    [SerializeField] private Rocket rocketPrefab;
     private float explosionDamage = 50f;
     public RPG()
     {
