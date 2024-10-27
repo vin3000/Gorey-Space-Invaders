@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     // Variabler
     float speed = 10f;
     KeyCode shootKey = KeyCode.Space;
+    public Freezeframe freezeFrame;
+    public CameraShake screenShake;
 
     //Vapen Variabler
     public Weapon glockPrefab, sniperPrefab, RPGPrefab, SMGPrefab;
@@ -81,7 +83,6 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(shootKey))
         {
-            Debug.Log(currentWeapon);
             Shoot(currentWeapon.ammo, currentWeapon.fireRate, currentWeapon.damage, currentWeapon.projectileSpeed);
         }
 
@@ -114,9 +115,20 @@ public class Player : MonoBehaviour
                 ResetWeapon();
             }
             currentWeapon.SpawnProjectile();
+            screenShake.Shake(2f, 10f);
             StartCoroutine(Cooldown(fireRate));  
             currentWeapon.ammo -= 1;
-            weaponSoundEffect.PlayOneShot(weaponSoundEffect.clip, 0.10f);
+            if(currentWeapon is RPG)
+            {
+                weaponSoundEffect.PlayOneShot(weaponSoundEffect.clip, 0.25f);
+            } else if(currentWeapon is SMG)
+            {
+                weaponSoundEffect.PlayOneShot(weaponSoundEffect.clip, 0.05f);
+            } 
+            else
+            {
+                weaponSoundEffect.PlayOneShot(weaponSoundEffect.clip, 0.10f);
+            }
         }
     }
     private void ResetWeapon()
@@ -130,7 +142,6 @@ public class Player : MonoBehaviour
         {
             currentWeapon.removeObject();
         } 
-        print(currentWeapon);
         currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation, transform); 
 
         ammoBar.SetMaxAmmo(currentWeapon.ammo); //nnn
@@ -141,7 +152,7 @@ public class Player : MonoBehaviour
         currentWeapon.removeObject();
         currentWeapon = Instantiate(newWeapon, newWeapon.transform.position, newWeapon.transform.rotation);
         currentWeapon.transform.SetParent(transform, false);
-        weaponSoundEffect.clip = currentWeapon.soundEffect.clip;
+        weaponSoundEffect.clip = currentWeapon.soundEffect;
     }
 
     IEnumerator Cooldown(float fireRate)

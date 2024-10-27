@@ -174,6 +174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoBar: {fileID: 0}
   currentWeaponUI: {fileID: 0}
+  freezeFrame: {fileID: 1316128433095423459, guid: 95397945f1c612f4395a7f43e43eab26, type: 3}
+  screenShake: {fileID: 0}
   glockPrefab: {fileID: 4610839503408435601, guid: 80e72ef6c91564f4bbabe800e31c7600, type: 3}
   sniperPrefab: {fileID: -5015788467159530059, guid: 8c703f68c01cf89499776631125f474b, type: 3}
   RPGPrefab: {fileID: 5470397480272682229, guid: 0771411a0897db043a2432e43610b498, type: 3}
