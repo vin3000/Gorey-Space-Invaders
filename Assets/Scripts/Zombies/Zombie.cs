@@ -8,13 +8,11 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Zombies : MonoBehaviour
 {
     /*
-     * Gï¿½r sï¿½ att game manager letar efter denna istï¿½llet fï¿½r invaders
+     * Gör så att game manager letar efter denna istället för invaders
      */
 
     /*
-     * MILTON JOBBAR!! Fixa animations
-     * byt ut mot annan projectile??
-     * gï¿½r sï¿½ att koden ï¿½ndrar waves (helst dynamic waves, inte hardcoded)
+     * byt ut mot annan projectile?? Bullet?
      */
 
     public float speed = 10f;
@@ -32,7 +30,8 @@ public class Zombies : MonoBehaviour
     public GameObject summonPrefab;
     public Explosion explosionParticle;
     private ParticleSystem explosionPartSys;
-    public ParticleSystem bloodParticle;
+    public GameObject bloodParticle;
+    private ParticleSystem bloodPartSys;
     Vector2 scaleOfObject; //used to change size of blood particle
 
 
@@ -44,6 +43,7 @@ public class Zombies : MonoBehaviour
     {
         Vector2 scaleOfObject = transform.lossyScale;
         animator = GetComponentInChildren<Animator>();
+        bloodPartSys = bloodParticle.GetComponent<ParticleSystem>();
         explosionPartSys = explosionParticle.GetComponent<ParticleSystem>();
 
         if (isShooter)
@@ -138,7 +138,7 @@ public class Zombies : MonoBehaviour
             {
                 health -= collision.gameObject.GetComponent<Bullet>().damage;
                 CheckHealth();
-                ParticleSystem blood = Instantiate(bloodParticle, transform.position, Quaternion.identity);
+                Object blood = Instantiate(bloodParticle, transform.position, Quaternion.identity);
                 Destroy(blood, 1f);
             }
             if (collision.gameObject.GetComponent<Rocket>()) 
