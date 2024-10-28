@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1739011360790721723
+--- !u!1001 &2361875140364220029
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5526857686735642513, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: m_Name
-      value: MediumMultiWave Variant
+      value: BossWave Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6547307221745504125, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57,12 +57,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
+      propertyPath: mainZombiePrefab
+      value: 
+      objectReference: {fileID: 6011454478371480434, guid: 786cbda8d7f94e64ab92ad1aa3e873c8, type: 3}
+    - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
+      propertyPath: instantiateCooldown
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: colRange.Array.data[0]
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: colRange.Array.data[1]
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: rowRange.Array.data[0]

@@ -53,6 +53,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
+      propertyPath: instantiateCooldown
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: colRange.Array.data[0]
       value: 5
       objectReference: {fileID: 0}

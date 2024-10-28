@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5526857686735642513, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: m_Name
-      value: MediumShootMultiWave Variant
+      value: MediumShootingWave
       objectReference: {fileID: 0}
     - target: {fileID: 6547307221745504125, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: mainZombiePrefab
       value: 
       objectReference: {fileID: 5100487443101459088, guid: 4f9818babb9d1e7499e5c48c1d4ecfd2, type: 3}
+    - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
+      propertyPath: instantiateCooldown
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: colRange.Array.data[0]
       value: 5

@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5526857686735642513, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: m_Name
-      value: WaveCenterBase Variant
+      value: EasyWave2
       objectReference: {fileID: 0}
     - target: {fileID: 6547307221745504125, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51,6 +51,10 @@ PrefabInstance:
     - target: {fileID: 6547307221745504125, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
+      propertyPath: instantiateCooldown
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8441577271123326895, guid: 28fa82d21e6f0c14a880cd7182845009, type: 3}
       propertyPath: colRange.Array.data[0]

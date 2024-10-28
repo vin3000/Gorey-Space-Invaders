@@ -45,8 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b338227d69cc4584bb9511e330cffd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMultiWave: 0
+  multiWaveNumber: 0
+  multiWaveCooldown: 2
   rowRange: 0000000000000000
   colRange: 0000000000000000
+  rowSize: 0
+  colSize: 0
   difficulty: 3
   mainZombiePrefab: {fileID: 4707826000537443506, guid: 58da98eedf9715142b7f266e15e5f6f8, type: 3}
   hasSpecial: 1
@@ -56,6 +61,7 @@ MonoBehaviour:
   - {fileID: 745173448408956799, guid: 7e56fdbfca268a34b9a401465ff70853, type: 3}
   - {fileID: 6705245041661389425, guid: 0ccc0db9d309e9f41902ae4458aa4f05, type: 3}
   speed: 2
+  instantiateCooldown: 3
 --- !u!61 &4799474197284933907
 BoxCollider2D:
   m_ObjectHideFlags: 0

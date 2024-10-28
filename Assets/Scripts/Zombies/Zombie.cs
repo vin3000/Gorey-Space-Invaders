@@ -20,6 +20,7 @@ public class Zombies : MonoBehaviour
     public float damage = 10f;
     public float health = 10f;
 
+    public bool isSpecial = false;
     public bool isShooter = false;
     public bool isExplosive = false;
     public bool isSummoner = false;
@@ -34,6 +35,7 @@ public class Zombies : MonoBehaviour
     private ParticleSystem explosionPartSys;
     public GameObject bloodParticle;
     private ParticleSystem bloodPartSys;
+    public GameObject powerUpPrefab;
     Vector2 scaleOfObject; //used to change size of blood particle
 
 
@@ -114,7 +116,6 @@ public class Zombies : MonoBehaviour
         {
             transform.parent = null;
         }
-        freezer.freeze(0.2f);
         BoxCollider2D bCol = GetComponent<BoxCollider2D>();
         bCol.enabled = !bCol.enabled;
 
@@ -132,6 +133,14 @@ public class Zombies : MonoBehaviour
         }
         isDead = true;
         animator.SetBool("isDead", isDead);
+        if (isSpecial)
+        {
+            float rand = UnityEngine.Random.value;
+            if (rand < 0.2)
+            {
+                Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+            }
+        }
         Destroy(gameObject, deadAnimTime);
         
     }
@@ -171,7 +180,7 @@ public class Zombies : MonoBehaviour
             print(collision.gameObject);
             GameObject Player = GameObject.Find("Player");
             Player.GetComponent<Health>().currentHealth -= damage; //make it so that it kills a bit of health
-            GameManager.Instance.OnBoundaryReached(); //h�r letar game manager efter invaders, n�r koden h�r har blivit individ baserad. MAY OR MAY NOT BE USELESS. I think this is the "damage player if edge" thing
+            Die();
         }
     }
 }

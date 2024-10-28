@@ -36,11 +36,16 @@ public class WaveCenter : MonoBehaviour
      */
     BoxCollider2D m_Collider;
     private Vector3 initialPosition;
+    public bool isMultiWave;
+    public int multiWaveNumber;
+    public float multiWaveCooldown = 2f;
 
     private int row;
     private int col;
     public int[] rowRange = new int[2]; //smallest, largest
     public int[] colRange = new int[2];
+    public int rowSize;
+    public int colSize;
 
     public int difficulty; //0->3
     /* 0 - easy, 1-5
@@ -53,12 +58,14 @@ public class WaveCenter : MonoBehaviour
     public Zombies[] specZombiePrefabs = new Zombies[4]; //whatever spawns in the special spot (0-Expl, 1-*//* + expl, 2- *//* + infest, 3- *//*one extra explode, to make it easier to kill bosses)
     Zombies specZombiePrefab;
     public float speed;
-    public float instantiateCooldown = 1;
+    public float instantiateCooldown = 1f;
 
     void Awake() //en speciel zombie per wave
     {
         row = UnityEngine.Random.Range(rowRange[0], rowRange[1] + 1);
         col = UnityEngine.Random.Range(colRange[0], colRange[1] + 1);
+        rowSize = row * 2;
+        colSize = col * 2;
         print($"row = {row}");
         print($"col = {col}");
 
@@ -144,8 +151,6 @@ public class WaveCenter : MonoBehaviour
             if (Zombie.gameObject.activeSelf)
                 nr++;
         }
-
-        Debug.Log(nr);
         return nr;
     }
     private void OnCollisionStay2D(Collision2D collision)
